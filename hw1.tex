@@ -1,0 +1,192 @@
+\documentclass{article}
+\usepackage{amsfonts, amsthm, amsmath, amssymb, mathtools, ulem, mathrsfs, physics, esint, siunitx, tikz-cd}
+\usepackage{pdfpages, fullpage, color, microtype, cancel, textcomp, markdown, hyperref, graphicx}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\graphicspath{{./images/}}
+\usepackage[english]{babel}
+\usepackage[autostyle, english=american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{xparse}
+\usepackage{tikz}
+
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\script}[1]{\ensuremath{\mathcalligra{#1}}}
+\newcommand{\scr}{\script r}
+
+% fonts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+\def\mbf#1{\mathbf{#1}}
+\def\tbf#1{\textbf{#1}}
+
+% common bold letters
+\def\bP{\mbb{P}}
+\def\bC{\mbb{C}}
+\def\bH{\mbb{H}}
+\def\bI{\mbb{I}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\def\bN{\mbb{N}}
+
+% brackets
+\newcommand{\br}[1]{\left(#1\right)}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\brc}[1]{\left\{#1\right\}}
+\newcommand{\lbr}[1]{\left\langle#1\right\rangle}
+
+% vectors
+\renewcommand{\i}{\hat{\imath}}
+\renewcommand{\j}{\hat{\jmath}}
+\renewcommand{\k}{\hat{k}}
+\newcommand{\proj}[2]{\text{proj}_{#2}\br{#1}}
+\newcommand{\m}[2][b]{\begin{#1matrix}#2\end{#1matrix}}
+\newcommand{\arr}[3][\sbr]{#1{\begin{array}{#2}#3\end{array}}}
+
+% misc
+\NewDocumentCommand{\seq}{O{n} O{1} O{\infty} m}{\br{#4}_{{#1}={#2}}^{#3}}
+\NewDocumentCommand{\app}{O{x} O{\infty}}{\xrightarrow{#1\to#2}}
+\newcommand{\sm}{\setminus}
+\newcommand{\sse}{\subseteq}
+\renewcommand{\ss}{\subset}
+\newcommand{\vn}{\varnothing}
+\newcommand{\lc}{\epsilon_{ijk}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vp}{\varphi}
+\renewcommand{\th}{\theta}
+\newcommand{\cjg}[1]{\overline{#1}}
+\newcommand{\inv}{^{-1}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\newcommand{\ans}{\tbf{Ans. }}
+\newcommand{\pf}{\tbf{Pf. }}
+\newcommand{\imp}{\implies}
+\newcommand{\impleft}{\reflectbox{$\implies$}}
+\newcommand{\ck}{\frac1{4\pi\ep_0}}
+\newcommand{\ckb}{4\pi\ep_0}
+\newcommand{\sto}{\longrightarrow}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\intt}{int}
+\DeclareMathOperator{\bd}{bd}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\fxn}[5]{#1:\begin{array}{rcl}#2&\longrightarrow & #3\\[-0.5mm]#4&\longmapsto &#5\end{array}}
+\newcommand{\sep}[1][.5cm]{\vspace{#1}}
+\DeclareMathOperator{\card}{card}
+\renewcommand{\ip}[2]{\lbr{#1,#2}}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\Arg}{Arg}
+
+% title
+\title{Scientific Computing HW 1}
+\author{Ryan Chen}
+%\date{\today}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+\begin{enumerate}
+	
+	
+	
+\item Pick $T<t^*$ where $t^*:=t_0+\frac{1}{y_0}$. Fix $r\in\bR$. Then $f(t,y):=y^2$ is continuous on the cylinder $Q:=\brc{t_0\le t\le T,~|y-y_0|\le r}$. Now for all $(t,y)\in Q$,
+$$|y-y_0|\le r
+\imp |y| = |y-y_0+y_0|
+\le |y-y_0|+|y_0|
+\le r+|y_0|
+\imp |f(t,y)| = |y^2| = |y|^2 \le (r+|y_0|)^2$$
+i.e. $|f|\le M$ on $Q$ where $M:=(r+|y_0|)^2$. Then by theorem 1, the IVP has a solution for $0\le t-t_0\le \min(\tfrac rM,T-t_0)$.
+
+
+
+\item Pick $0\le T<\infty$. Fix $r\in\bR$. Then $f(t,y):=2y^{1/2}$ is continuous on the cylinder $Q:=\brc{t_0\le t\le T,~|y|\le r}$. Now for all $(t,y)\in Q$ with $y\ge0$, using similar arguments as in P1,
+$$|y|\le r
+\imp |f(t,y)| = |2y^{1/2}| = 2y^{1/2} \le 2r^{1/2}$$
+i.e. $|f|\le M$ on $Q$ where $M:=2r^{1/2}$. Then by theorem 1, the IVP has a solution for $0\le t\le \min(\frac rM,T)$.\\
+
+To see that $f(y):=2y^{1/2}$ is not Lipschitz at $y=0$, suppose there exists $C>0$ such that $|f(x)-f(0)|\le C|x-0|$ for all $x\ge0$, i.e. $2x^{1/2}\le Cx$. But if we set $x=\frac{1}{C^2}$, then $2\le Cx^{1/2}=C\frac1C=1$, a contradiction.
+
+
+
+\item Using the Taylor expansion of $y$ at $t_n$,
+\begin{align*}
+	\tau_{n+1} &= y + hy' + \frac12h^2y'' + \frac16h^3y''' + O(h^4) - y \\
+	& - h\sbr{\frac{23}{12}y' - \frac43\br{y' - hy'' + \frac12h^2y''' + O(h^3)} + \frac{5}{12}\br{y' - 2hy'' + 2h^2y''' + O(h^3)}}
+\end{align*}
+Collect coefficients of the following terms:
+\begin{align*}
+	y: &\quad 1 - 1 = 0 \\
+	hy': &\quad 1 - \frac{23}{12} + \frac43 - \frac{5}{12} = \frac{1}{12}(12-23+16-5) = 0 \\
+	h^2y'': &\quad \frac12 - \frac43 + \frac56 = \frac16(3-8+5) = 0 \\
+	h^3y''': &\quad \frac16 + \frac23 - \frac56 = \frac16(1+4-5) = 0 
+\end{align*}
+Thus $\tau_{n+1}=O(h^4)$, i.e. the method is consistent of order 3.
+
+
+
+\item Substituting $k$ into the recurrence,
+$$u_{n+1} = u_n + hf\br{t_n+\frac12h,u_n+\frac12hk}$$
+Using the Taylor expansion of $y$ at $t_n+\frac12h$,
+$$\tau_{n+1} = y + hy' + \frac12h^2y'' + O(h^3) - y - h\sbr{y' + \frac12y'' + O(h^2)}$$
+Collect coefficients of the following terms:
+\begin{align*}
+	y: &\quad 1 - 1 = 0 \\
+	hy': &\quad 1 - 1 = 0 \\
+	h^2y'': &\quad \frac12 - \frac12 = 0 \\
+\end{align*}
+Thus $\tau_{n+1}=O(h^3)$, i.e. the method is consistent of order 2.
+
+
+
+\item
+
+\begin{enumerate}[label=(\alph*)]
+	
+	\item Since we have four undetermined coefficients, we take a third order Taylor expansion. Any higher order expansion would give an overconstrained system.
+	\begin{align*}
+		\tau_{n+1} &= y + hy' + \frac12h^2y'' + \frac16h^3y''' + O(h^4) - a_0y - a_1\sbr{y' - hy' + \frac12h^2y'' - \frac16h^3y''' + O(h^4)}\\
+		& - h\sbr{b_0y' + b_1\br{y' - hy'' + \frac12h^2y''' + O(h^3)}}
+	\end{align*}
+	Collect coefficients of the following terms. To seek consistency of the highest possible order (in this case order 3), set each sum equal to 0:
+	\begin{align*}
+		y: &\quad 1 - a_0 - a_1 = 0 \\
+		hy': &\quad 1 + a_1 - b_0 - b_1 = 0 \\
+		h^2y'': &\quad \frac12 - \frac12a_1 + b_1 = 0 \\
+		h^3y''': &\quad \frac16+ \frac16a_1 - \frac12b_1 = 0
+	\end{align*}
+	The solution of this system (using WolframAlpha) is $a_0=-4,~a_1=5,~b_0=4,~b_1=2$.
+	
+	
+	\item \pf Applying the method (with coefficients from the last part) to $y'=0=:f(t,y)$ with initial condition $y(0)=a$,
+	$$u_{n+1} + 4u_n - 5u_{n-1} = 0$$
+	Using the ansatz solution $r^n$,
+	$$0 = r^2+4r-5 = (r+5)(r-1)
+	\imp r=1,-5
+	\imp u_n = A + B(-5)^n$$
+	The exact solution of the IVP is $y(t)=a$. Perturb the values of the first two iterates, say $u_0=a+\delta_0$ and $u_1=a+\delta_1$. Then
+	$$a+\delta_0 = A+B,~a+\delta_1 = A-5B
+	\imp \delta_0 - \delta_1 = 6B$$
+	If $\delta_0\ne\delta_1$ then $B\ne0$, in which case the solution blows up. Thus the method is unstable.
+	
+	
+	\item \url{https://github.com/RokettoJanpu/Scientific-Computing-2/blob/main/hw1.ipynb}
+	
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+\end{document}
