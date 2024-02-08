@@ -1,0 +1,158 @@
+\documentclass{article}
+\usepackage{amsfonts, amsthm, amsmath, amssymb, mathtools, ulem, mathrsfs, physics, esint, siunitx, tikz-cd}
+\usepackage{pdfpages, fullpage, color, microtype, cancel, textcomp, markdown, hyperref, graphicx}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\graphicspath{{./images/}}
+\usepackage[english]{babel}
+\usepackage[autostyle, english=american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{xparse}
+\usepackage{tikz}
+
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\script}[1]{\ensuremath{\mathcalligra{#1}}}
+\newcommand{\scr}{\script r}
+
+% fonts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+\def\mbf#1{\mathbf{#1}}
+\def\tbf#1{\textbf{#1}}
+
+% common bold letters
+\def\bP{\mbb{P}}
+\def\bC{\mbb{C}}
+\def\bH{\mbb{H}}
+\def\bI{\mbb{I}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\def\bN{\mbb{N}}
+
+% brackets
+\newcommand{\br}[1]{\left(#1\right)}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\brc}[1]{\left\{#1\right\}}
+\newcommand{\lbr}[1]{\left\langle#1\right\rangle}
+
+% vectors
+\renewcommand{\i}{\hat{\imath}}
+\renewcommand{\j}{\hat{\jmath}}
+\renewcommand{\k}{\hat{k}}
+\newcommand{\proj}[2]{\text{proj}_{#2}\br{#1}}
+\newcommand{\m}[2][b]{\begin{#1matrix}#2\end{#1matrix}}
+\newcommand{\arr}[3][\sbr]{#1{\begin{array}{#2}#3\end{array}}}
+
+% misc
+\NewDocumentCommand{\seq}{O{n} O{1} O{\infty} m}{\br{#4}_{{#1}={#2}}^{#3}}
+\NewDocumentCommand{\app}{O{x} O{\infty}}{\xrightarrow{#1\to#2}}
+\newcommand{\sm}{\setminus}
+\newcommand{\sse}{\subseteq}
+\renewcommand{\ss}{\subset}
+\newcommand{\vn}{\varnothing}
+\newcommand{\lc}{\epsilon_{ijk}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vp}{\varphi}
+\renewcommand{\th}{\theta}
+\newcommand{\cjg}[1]{\overline{#1}}
+\newcommand{\inv}{^{-1}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\newcommand{\ans}{\tbf{Ans. }}
+\newcommand{\pf}{\tbf{Pf. }}
+\newcommand{\imp}{\implies}
+\newcommand{\impleft}{\reflectbox{$\implies$}}
+\newcommand{\ck}{\frac1{4\pi\ep_0}}
+\newcommand{\ckb}{4\pi\ep_0}
+\newcommand{\sto}{\longrightarrow}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\intt}{int}
+\DeclareMathOperator{\bd}{bd}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\fxn}[5]{#1:\begin{array}{rcl}#2&\longrightarrow & #3\\[-0.5mm]#4&\longmapsto &#5\end{array}}
+\newcommand{\sep}[1][.5cm]{\vspace{#1}}
+\DeclareMathOperator{\card}{card}
+\renewcommand{\ip}[2]{\lbr{#1,#2}}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\Arg}{Arg}
+
+% title
+\title{Scientific Computing HW 2}
+\author{Ryan Chen}
+%\date{\today}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+	
+\maketitle
+
+
+
+\begin{enumerate}
+	
+	
+	
+\item
+
+\begin{enumerate}[label=(\alph*)]\setcounter{enumi}{1}
+	
+	\item Code: \url{https://github.com/RokettoJanpu/Scientific-Computing-2/blob/main/hw2%20problem%201%20part%20b.ipynb}
+	
+	Generally, CPU time decreases as $\ep$ increases. Moreover, the CPU times are considerably higher for RK45 than LSODA, especially when comparing RK45 vs LSODA at $\mu=1000$. This phenomena is likely due to the Van der Pol problem being stiff and RK45 being an explicit method, leading to restrictions on feasible step size which in turn limit the method's effectiveness. On the other hand, LSODA is an implicit method with stiffness detection, leading to increased effectiveness for this problem.
+	
+	\item Code: \url{https://github.com/RokettoJanpu/Scientific-Computing-2/blob/main/hw2%20problem%201%20part%20c.ipynb}
+	
+	Generally, the CPU times for Radau were considerably higher than those for RK45 and DOP853. Notably for DOP853 and Radau, the satellite follows closely to the predicted trajectory for a while but eventually falls out of orbit of the Earth-Moon system. On the other hand for RK45, the satellite strays comparatively further from the predicted trajectory but does not fall out of orbit during the observed periods.
+	
+\end{enumerate}
+
+
+
+\item Code: \url{https://github.com/RokettoJanpu/Scientific-Computing-2/blob/main/hw2%20problem%202.ipynb}
+
+In order of increasing area enclosed by contour, the methods are: forward Euler, midpoint rule with Euler predictor, Kutta's method, standard Runge-Kutta, DOPRI5(4).
+
+\begin{center}
+	\includegraphics[scale=.35]{hw2 problem 2 RAS}
+\end{center}
+
+
+
+\item For the backward Euler method, the local truncation error at step $n+1$ is
+$$\tau_{n+1} = y_{n+1} - y_n - hf(t_{n+1},y_{n+1})$$
+For the numerical solution $u$,
+$$0 = u_{n+1} - u_n - hf(t_{n+1},u_{n+1})$$
+Subtract the latter equation from the former.
+$$\tau_{n+1} = (y_{n+1}-u_{n+1}) - (y_n-u_n) - h[f(t_{n+1},y_{n+1})-f(t_{n+1},u_{n+1})]$$
+$$\imp (y_{n+1}-u_{n+1}) = (y_n-u_n) + h[f(t_{n+1},y_{n+1})-f(t_{n+1},u_{n+1})] + \tau_{n+1}$$
+Set $e_n:=\norm{y_n-u_n}$ and $\tau:=\max_n\norm{\tau_n}$. Since $f$ is $L$--Lipschitz in $u$,
+$$e_{n+1} \le e_n + hL\norm{y_{n+1}-u_{n+1}} + \tau \le e_n + hLe_{n+1} + \tau$$
+$$\imp (1-hL)e_{n+1} \le e_n + \tau
+\imp e_{n+1} \le \frac{1}{1-hL}e_n + \frac{\tau}{1-hL} = ae_n + b,~a:=\frac{1}{1-hL},~b:=\frac{\tau}{1-hL}$$
+To ensure $a,b>0$, pick $h<\frac{1}{2L}$ so that
+$$hL < \frac12 \imp 1-hL > \frac12 \imp 0 < a < 2,~b\ge0$$
+Before proceeding, we compute, using $hL<\frac12$,
+$$a = \frac{1}{1-hL} = 1 + hL + (hL)^2 + (hL)^3 + \dots \le 1 + hL + hL = 1 + 2hL \le e^{2hL} \quad (3.1)$$
+$$a - 1 = \frac{1}{1-hL} - 1 = \frac{hL}{1-hL} \imp \frac{1}{a-1} = \frac{1-hL}{hL} \quad (3.2)$$
+The solution to the recurrence $x_n=ax_n+b$ is $x_n=a^nx_0+\frac{a^n-1}{a-1}b$, so
+$$e_n \le a^ne_0 + \frac{a^n-1}{a-1}b$$
+Using $hn\le hN=T$ where $N$ is the number of time steps and $T$ is the period, and (3.1),
+$$a^ne_0 \le e^{2Lhn}e_0 \le e^{2LT}e_0 = O(e_0)$$
+Using $hn\le T$, (3.2), and $\tau=O(h^{p+1})$,
+$$\frac{a^n-1}{a-1}b \le \frac{(e^{2Lhn}-1)(1-hL)\tau}{hL(1-hL)} \le \frac{(e^{2LT}-1)\tau}{Lh} = O(h^p)$$
+Putting together the calculations, $e_n\le O(e_0)+O(h^p)$, i.e. the error decays as $O(e_0)+O(h^p)$ as $h\to0$ uniformly on the interval $[0,T]$. Thus the method converges.
+
+
+
+\end{enumerate}
+
+
+\end{document}
