@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9.24) (preloaded format=pdflatex 2023.9.27)  8 FEB 2024 13:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9.24) (preloaded format=pdflatex 2023.9.27)  14 FEB 2024 18:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1130,28 +1130,150 @@ Overfull \hbox (0.8958pt too wide) in paragraph at lines 109--110
 kettoJanpu / scientific-[]computing-[]2-[]redux / blob / main / hw2 %
  []
 
+<hw2 p1b method RK45, eps = 1e-06.png, id=7, 462.528pt x 346.896pt>
+File: hw2 p1b method RK45, eps = 1e-06.png Graphic file (type png)
+<use hw2 p1b method RK45, eps = 1e-06.png>
+Package pdftex.def Info: hw2 p1b method RK45, eps = 1e-06.png  used on input li
+ne 112.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b method RK45, eps = 1e-09.png, id=9, 462.528pt x 346.896pt>
+File: hw2 p1b method RK45, eps = 1e-09.png Graphic file (type png)
+<use hw2 p1b method RK45, eps = 1e-09.png>
+Package pdftex.def Info: hw2 p1b method RK45, eps = 1e-09.png  used on input li
+ne 113.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b method RK45, eps = 1e-12.png, id=10, 462.528pt x 346.896pt>
+File: hw2 p1b method RK45, eps = 1e-12.png Graphic file (type png)
+<use hw2 p1b method RK45, eps = 1e-12.png>
+Package pdftex.def Info: hw2 p1b method RK45, eps = 1e-12.png  used on input li
+ne 114.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b method LSODA, eps = 1e-06.png, id=11, 462.528pt x 346.896pt>
+File: hw2 p1b method LSODA, eps = 1e-06.png Graphic file (type png)
+<use hw2 p1b method LSODA, eps = 1e-06.png>
+Package pdftex.def Info: hw2 p1b method LSODA, eps = 1e-06.png  used on input l
+ine 115.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b method LSODA, eps = 1e-09.png, id=12, 462.528pt x 346.896pt>
+File: hw2 p1b method LSODA, eps = 1e-09.png Graphic file (type png)
+<use hw2 p1b method LSODA, eps = 1e-09.png>
+Package pdftex.def Info: hw2 p1b method LSODA, eps = 1e-09.png  used on input l
+ine 116.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b method LSODA, eps = 1e-12.png, id=13, 462.528pt x 346.896pt>
+File: hw2 p1b method LSODA, eps = 1e-12.png Graphic file (type png)
+<use hw2 p1b method LSODA, eps = 1e-12.png>
+Package pdftex.def Info: hw2 p1b method LSODA, eps = 1e-12.png  used on input l
+ine 117.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 10.png, id=14, 462.528pt x 34
+6.896pt>
+File: hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 10.png Graphic file (typ
+e png)
+<use hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 10.png>
+Package pdftex.def Info: hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 10.pn
+g  used on input line 118.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 100.png, id=15, 462.528pt x 3
+46.896pt>
+File: hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 100.png Graphic file (ty
+pe png)
+<use hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 100.png>
+Package pdftex.def Info: hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 100.p
+ng  used on input line 119.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 1000.png, id=16, 462.528pt x 
+346.896pt>
+File: hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 1000.png Graphic file (t
+ype png)
+<use hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 1000.png>
+Package pdftex.def Info: hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 1000.
+png  used on input line 120.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 10.png, id=17, 462.528pt x 3
+46.896pt>
+File: hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 10.png Graphic file (ty
+pe png)
+<use hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 10.png>
+Package pdftex.def Info: hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 10.p
+ng  used on input line 121.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 100.png, id=18, 462.528pt x 
+346.896pt>
+File: hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 100.png Graphic file (t
+ype png)
+<use hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 100.png>
+Package pdftex.def Info: hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 100.
+png  used on input line 122.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 1000.png, id=19, 462.528pt x
+ 346.896pt>
+File: hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 1000.png Graphic file (
+type png)
+<use hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 1000.png>
+Package pdftex.def Info: hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 1000
+.png  used on input line 123.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+[1
 
-Overfull \hbox (0.8958pt too wide) in paragraph at lines 113--114
+{C:/Users/RyanPC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./hw2 p1b m
+ethod RK45, eps = 1e-06.png> <./hw2 p1b method RK45, eps = 1e-09.png> <./hw2 p1
+b method RK45, eps = 1e-12.png> <./hw2 p1b method LSODA, eps = 1e-06.png> <./hw
+2 p1b method LSODA, eps = 1e-09.png> <./hw2 p1b method LSODA, eps = 1e-12.png> 
+<./hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 10.png> <./hw2 p1b log(tcpu
+) vs log(eps), method RK45, mu = 100.png> <./hw2 p1b log(tcpu) vs log(eps), met
+hod RK45, mu = 1000.png> <./hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 1
+0.png> <./hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 100.png> <./hw2 p1b
+ log(tcpu) vs log(eps), method LSODA, mu = 1000.png>]
+Overfull \hbox (0.8958pt too wide) in paragraph at lines 128--129
 []\OT1/cmr/m/n/10 (-20) Code: []$\OT1/cmtt/m/n/10 https : / / github . com / Ro
 kettoJanpu / scientific-[]computing-[]2-[]redux / blob / main / hw2 %
  []
 
-
-Overfull \hbox (31.39534pt too wide) in paragraph at lines 121--122
+<hw2 p1c 1.png, id=47, 578.16pt x 578.16pt>
+File: hw2 p1c 1.png Graphic file (type png)
+<use hw2 p1c 1.png>
+Package pdftex.def Info: hw2 p1c 1.png  used on input line 131.
+(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
+<hw2 p1c 2.png, id=48, 578.16pt x 578.16pt>
+File: hw2 p1c 2.png Graphic file (type png)
+<use hw2 p1c 2.png>
+Package pdftex.def Info: hw2 p1c 2.png  used on input line 132.
+(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
+<hw2 p1c 3.png, id=49, 578.16pt x 578.16pt>
+File: hw2 p1c 3.png Graphic file (type png)
+<use hw2 p1c 3.png>
+Package pdftex.def Info: hw2 p1c 3.png  used on input line 133.
+(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
+<hw2 p1c 4.png, id=50, 578.16pt x 578.16pt>
+File: hw2 p1c 4.png Graphic file (type png)
+<use hw2 p1c 4.png>
+Package pdftex.def Info: hw2 p1c 4.png  used on input line 134.
+(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
+<hw2 p1c 5.png, id=51, 578.16pt x 578.16pt>
+File: hw2 p1c 5.png Graphic file (type png)
+<use hw2 p1c 5.png>
+Package pdftex.def Info: hw2 p1c 5.png  used on input line 135.
+(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
+<hw2 p1c 6.png, id=52, 578.16pt x 578.16pt>
+File: hw2 p1c 6.png Graphic file (type png)
+<use hw2 p1c 6.png>
+Package pdftex.def Info: hw2 p1c 6.png  used on input line 136.
+(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
+[2 <./hw2 p1c 1.png> <./hw2 p1c 2.png> <./hw2 p1c 3.png> <./hw2 p1c 4.png> <./h
+w2 p1c 5.png> <./hw2 p1c 6.png>]
+Overfull \hbox (31.39534pt too wide) in paragraph at lines 145--146
 []\OT1/cmr/m/n/10 (-20) Code: []$\OT1/cmtt/m/n/10 https : / / github . com / Ro
 kettoJanpu / scientific-[]computing-[]2-[]redux / blob / main / hw2 % 20problem
  %
  []
 
-<hw2 problem 2 RAS.png, id=9, 578.16pt x 578.16pt>
+<hw2 problem 2 RAS.png, id=66, 578.16pt x 578.16pt>
 File: hw2 problem 2 RAS.png Graphic file (type png)
 <use hw2 problem 2 RAS.png>
-Package pdftex.def Info: hw2 problem 2 RAS.png  used on input line 126.
+Package pdftex.def Info: hw2 problem 2 RAS.png  used on input line 150.
 (pdftex.def)             Requested size: 202.35902pt x 202.35902pt.
-[1
-
-{C:/Users/RyanPC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./hw2 probl
-em 2 RAS.png>] [2] (hw2.aux)
+[3 <./hw2 problem 2 RAS.png>] [4] (hw2.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -1160,13 +1282,13 @@ Package rerunfilecheck Info: File `hw2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34134 strings out of 475337
- 726098 string characters out of 5760066
- 1931785 words of memory out of 5000000
- 54980 multiletter control sequences out of 15000+600000
+ 34334 strings out of 475337
+ 734258 string characters out of 5760066
+ 1930785 words of memory out of 5000000
+ 55178 multiletter control sequences out of 15000+600000
  567338 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,6n,121p,1002b,1116s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,6n,121p,1002b,1252s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmmi10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmmi5.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1
@@ -1179,9 +1301,9 @@ PC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
 Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
 .pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmtt10.pfb>
-Output written on hw2.pdf (2 pages, 195133 bytes).
+Output written on hw2.pdf (4 pages, 747402 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
- 14866 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 129 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
+ 14956 words of extra memory for PDF output out of 17280 (max. 10000000)
 

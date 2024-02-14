@@ -108,9 +108,33 @@
 	
 	\item Code: \url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/hw2%20problem%201%20part%20b.ipynb}
 	
-	Generally, CPU time decreases as $\ep$ increases. Moreover, the CPU times are considerably higher for RK45 than LSODA, especially when comparing RK45 vs LSODA at $\mu=1000$. This phenomena is likely due to the Van der Pol problem being stiff and RK45 being an explicit method, leading to restrictions on feasible step size which in turn limit the method's effectiveness. On the other hand, LSODA is an implicit method with stiffness detection, leading to increased effectiveness for this problem.
+	\begin{center}
+		\includegraphics[scale=.3]{hw2 p1b method RK45, eps = 1e-06}
+		\includegraphics[scale=.3]{hw2 p1b method RK45, eps = 1e-09}
+		\includegraphics[scale=.3]{hw2 p1b method RK45, eps = 1e-12}
+		\includegraphics[scale=.3]{hw2 p1b method LSODA, eps = 1e-06}
+		\includegraphics[scale=.3]{hw2 p1b method LSODA, eps = 1e-09}
+		\includegraphics[scale=.3]{hw2 p1b method LSODA, eps = 1e-12}
+		\includegraphics[scale=.3]{hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 10}
+		\includegraphics[scale=.3]{hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 100}
+		\includegraphics[scale=.3]{hw2 p1b log(tcpu) vs log(eps), method RK45, mu = 1000}
+		\includegraphics[scale=.3]{hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 10}
+		\includegraphics[scale=.3]{hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 100}
+		\includegraphics[scale=.3]{hw2 p1b log(tcpu) vs log(eps), method LSODA, mu = 1000}
+	\end{center}
+	
+	Generally, CPU time decreases as $\ep$ increases. Moreover, the CPU times are considerably higher for RK45 than LSODA, especially when $\mu=1000$. This phenomena is likely due to the Van der Pol problem being stiff and RK45 being an explicit method, leading to restrictions on feasible step size which in turn limit the method's effectiveness. On the other hand, LSODA is an implicit method with stiffness detection, leading to increased effectiveness for this problem.
 	
 	\item Code: \url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/hw2%20problem%201%20part%20c.ipynb}
+	
+	\begin{center}
+		\includegraphics[scale=.3]{hw2 p1c 1}
+		\includegraphics[scale=.3]{hw2 p1c 2}
+		\includegraphics[scale=.3]{hw2 p1c 3}
+		\includegraphics[scale=.3]{hw2 p1c 4}
+		\includegraphics[scale=.3]{hw2 p1c 5}
+		\includegraphics[scale=.3]{hw2 p1c 6}
+	\end{center}
 	
 	Generally, the CPU times for Radau were considerably higher than those for RK45 and DOP853. Notably for DOP853 and Radau, the satellite follows closely to the predicted trajectory for a while but eventually falls out of orbit of the Earth-Moon system. On the other hand for RK45, the satellite strays comparatively further from the predicted trajectory but does not fall out of orbit during the observed periods.
 	
