@@ -1,0 +1,269 @@
+\documentclass{article}
+\usepackage{amsfonts, amsthm, amsmath, amssymb, mathtools, ulem, mathrsfs, physics, esint, siunitx, tikz-cd}
+\usepackage{pdfpages, fullpage, color, microtype, cancel, textcomp, markdown, hyperref, graphicx}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\graphicspath{{./images/}}
+\usepackage[english]{babel}
+\usepackage[autostyle, english=american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{xparse}
+\usepackage{tikz}
+
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\script}[1]{\ensuremath{\mathcalligra{#1}}}
+\newcommand{\scr}{\script r}
+
+% fonts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+\def\mbf#1{\mathbf{#1}}
+\def\tbf#1{\textbf{#1}}
+
+% common bold letters
+\def\bP{\mbb{P}}
+\def\bC{\mbb{C}}
+\def\bH{\mbb{H}}
+\def\bI{\mbb{I}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\def\bN{\mbb{N}}
+
+% brackets
+\newcommand{\br}[1]{\left(#1\right)}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\brc}[1]{\left\{#1\right\}}
+\newcommand{\lbr}[1]{\left\langle#1\right\rangle}
+
+% vectors
+\renewcommand{\i}{\hat{\imath}}
+\renewcommand{\j}{\hat{\jmath}}
+\renewcommand{\k}{\hat{k}}
+\newcommand{\proj}[2]{\text{proj}_{#2}\br{#1}}
+\newcommand{\m}[2][b]{\begin{#1matrix}#2\end{#1matrix}}
+\newcommand{\arr}[3][\sbr]{#1{\begin{array}{#2}#3\end{array}}}
+
+% misc
+\NewDocumentCommand{\seq}{O{n} O{1} O{\infty} m}{\br{#4}_{{#1}={#2}}^{#3}}
+\NewDocumentCommand{\app}{O{x} O{\infty}}{\xrightarrow{#1\to#2}}
+\newcommand{\sm}{\setminus}
+\newcommand{\sse}{\subseteq}
+\renewcommand{\ss}{\subset}
+\newcommand{\vn}{\varnothing}
+\newcommand{\lc}{\epsilon_{ijk}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vp}{\varphi}
+\renewcommand{\th}{\theta}
+\newcommand{\cjg}[1]{\overline{#1}}
+\newcommand{\inv}{^{-1}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\newcommand{\ans}{\tbf{Ans. }}
+\newcommand{\pf}{\tbf{Pf. }}
+\newcommand{\imp}{\implies}
+\newcommand{\impleft}{\reflectbox{$\implies$}}
+\newcommand{\ck}{\frac1{4\pi\ep_0}}
+\newcommand{\ckb}{4\pi\ep_0}
+\newcommand{\sto}{\longrightarrow}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\intt}{int}
+\DeclareMathOperator{\bd}{bd}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\fxn}[5]{#1:\begin{array}{rcl}#2&\longrightarrow & #3\\[-0.5mm]#4&\longmapsto &#5\end{array}}
+\newcommand{\sep}[1][.5cm]{\vspace{#1}}
+\DeclareMathOperator{\card}{card}
+\renewcommand{\ip}[2]{\lbr{#1,#2}}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\Arg}{Arg}
+
+% title
+\title{Scientific Computing HW 3}
+\author{Ryan Chen}
+%\date{\today}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+\maketitle
+
+
+
+\begin{enumerate}
+	
+	
+	
+\item From the Butcher array,
+$$A = \m{\gamma & 0 \\ 1-\gamma & \gamma},
+\quad b = \m{1-\gamma \\ \gamma},
+\quad c = \m{\gamma \\ 1}$$
+Check the 1st order accuracy condition.
+$$\sum_{l=1}^2 b_l = (1-\gamma)+\gamma = 1$$
+Check the 2nd order accuracy condition.
+$$\sum_{l=1}^2 b_lc_l = (1-\gamma)\gamma+\gamma\cdot 1
+= \gamma-\gamma^2+\gamma
+= 2\gamma-\gamma^2
+= 2-2^{1/2}-1-2\inv+2^{1/2}
+= 1-2\inv
+= \frac12$$
+
+Thus the method is 2nd order accurate. To show it is A--stable, first find the stability function $R(z)$ and let $|z|\to\infty$. 
+$$I - zA = \m{1-\gamma z & 0 \\ -(1-\gamma)z & 1-\gamma z}
+\imp D := \det(I-zA) = (1-\gamma z)^2 = \gamma^2z^2 - 2\gamma z+1$$
+$$\imp (I-zA)\inv = \frac1D\m{1-\gamma z & 0 \\ (1-\gamma)z & 1-\gamma z}
+\imp (I-zA)\inv 1_{s\times 1} = \frac1D\m{1-\gamma z \\ (1-\gamma)z+1-\gamma z} = \frac1D\m{1-\gamma z \\ (1-2\gamma)z+1}$$
+$$R(z) - 1 = zb^T(I-zA)\inv 1_{s\times 1} = \frac zD\sbr{(1-\gamma)(1-\gamma z)+\gamma((1-2\gamma)z+1)}
+= \frac zD\sbr{1-\gamma z-\gamma+\gamma^2z+(\gamma-2\gamma^2)z+\gamma}$$
+$$\imp R(z) - 1 = \frac zD\sbr{1-\gamma^2z}
+= \frac{-\gamma^2z^2+z}{\gamma^2z^2-2\gamma z+1}
+\imp R(z) = \frac{-\gamma^2z^2+z}{\gamma^2z^2-2\gamma z+1} + 1 \app[|z|] -1+1 = 0$$
+
+To finish showing A--stability, we plot the RAS and see that it contains the left half plane. Code in 2nd cell of:  
+
+\url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/hw3%20RAS.ipynb}
+
+\begin{center}
+	\includegraphics[scale=.3]{hw3 dirk2 RAS}
+\end{center}
+
+
+
+\item From the Butcher array,
+$$A = \m{\gamma & 0 \\ 1-2\gamma & \gamma},
+\quad b = \m{1/2 \\ 1/2},
+\quad c = \m{\gamma \\ 1-\gamma}$$
+
+\begin{enumerate}
+	
+	\item \pf Check the 1st order accuracy condition.
+	$$\sum_{l=1}^2 b_l = \frac12 + \frac12 = 1$$
+	Check the 2nd order accuracy condition.
+	$$\sum_{l=1}^2 b_lc_l = \frac12\gamma+ \frac12(1-\gamma) = \frac12(\gamma+1-\gamma) = \frac12$$
+	
+	
+	\item \pf Check the 3rd order accuracy conditions.
+	$$\sum_{p,q,r} b_pa_{pq}a_{pr} = \frac12[\gamma^2+2\gamma\cdot0+0^2] + \frac12[(1-2\gamma)^2+2(1-2\gamma)\gamma+\gamma^2]$$
+	The quantity in the second bracket is
+	$$(1-2\gamma)^2+2(1-2\gamma)\gamma+\gamma^2 = 1+4\gamma^2-4\gamma+2\gamma-4\gamma^2+\gamma^2
+	= \gamma^2-2\gamma+1
+	= (\gamma-1)^2$$
+	giving
+	$$\sum_{p,q,r} b_pa_{pq}a_{pr} = \frac12[\gamma^2+\gamma^2-2\gamma+1] = \gamma^2-\gamma+\frac12$$
+	We find
+	$$\gamma^2 = \frac12+ \frac3{36} + 2\frac{3^{1/2}}{12}
+	= \frac1{12}[3+1+2\cdot 3^{1/2}]
+	= \frac1{12}[4+2\cdot 3^{1/2}]
+	= \frac16[2+3^{1/2}]$$
+	so finally,
+	$$\sum_{p,q,r} b_pa_{pq}a_{pr} = \frac16[2+3^{1/2}-3-3^{1/2}+3] = \frac13$$
+	
+	
+	\item First find the stability function $R(z)$.
+	$$I - zA = \m{1-\gamma z & 0 \\ -(1-2\gamma)z & 1-\gamma z}
+	\imp D := \det(I-zA) = (1-\gamma z)^2 = \gamma^2z^2 - 2\gamma z+1$$
+	$$\imp (I-zA)\inv = \frac1D\m{1-\gamma z & 0 \\ (1-2\gamma)z & 1-\gamma z}
+	\imp (I-zA)\inv 1_{s\times 1} = \frac1D\m{1-\gamma z \\ (1-2\gamma)z+1-\gamma z} = \frac1D\m{1-\gamma z \\ (1-3\gamma)z+1}$$
+	$$R(z) - 1 = zb^T(I-zA)\inv 1_{s\times 1} = \frac z{2D}\sbr{1-\gamma z+(1-3\gamma)z+1)}
+	= \frac z{2D}\sbr{(1-4\gamma)z+2}
+	= \frac12\frac{(1-4\gamma)z^2+2z}{\gamma^2z^2-2\gamma z+1}$$
+	We find $\gamma$ by imposing $\lim_{|z|\to\infty}R(z)=0$.
+	$$\lim_{|z|\to\infty}R(z)=0 \iff -1 = \frac12\lim_{|z|\to\infty}\frac{(1-4\gamma)z^2+2z}{\gamma^2z^2-2\gamma z+1}
+	\iff \lim_{|z|\to\infty}\frac{(1-4\gamma)z^2+2z}{\gamma^2z^2-2\gamma z+1} = -2
+	\iff \frac{1-4\gamma}{\gamma^2} = -2$$
+	$$\iff -2\gamma^2 = 1-4\gamma
+	\iff 2\gamma^2-4\gamma+1=0
+	\iff \gamma = \frac44 \pm \frac{(16-8)^{1/2}}4 = 1 \pm \frac{2\cdot 2^{1/2}}4 = 1\pm 2^{-1/2}$$
+	
+	We check that the method for $\gamma=1\pm2^{-1/2}$ is A--stable, hence L--stable, by plotting the RASes and seeing that they contain the left half plane. Code in 3rd cell of:
+	
+	\url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/hw3%20RAS.ipynb}
+	
+	\begin{center}
+		\includegraphics[scale=.3]{hw3 dirk3 ras 1}
+		\includegraphics[scale=.3]{hw3 dirk3 ras 2}
+	\end{center}
+	
+\end{enumerate}
+
+
+
+\item Code for all parts of this problem:
+
+\url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/hw3.ipynb}
+
+\begin{enumerate}[label=(\alph*)]
+	
+	\item Set $f(t,y):=-L(y-\phi(t))+\phi'(t)$. To implement DIRK2, we first obtain explicit formulas for $k_1,k_2,u_{n+1}$.
+	$$k_1 = f(t_n+\gamma h,u_n+h\gamma k_1)
+	= -L\sbr{u_n+h\gamma k_1-\phi(t_n+\gamma h)}+\phi'(t_n+\gamma h)$$
+	$$\imp k_1 = -Lh\gamma k_1-L\sbr{u_n-\phi(t_n+\gamma h)}+\phi'(t_n+\gamma h)$$
+	$$\imp (1+Lh\gamma)k_1 = -L\sbr{u_n-\phi(t_n+\gamma h)}+\phi'(t_n+\gamma h)
+	\imp k_1 = \frac{-L\sbr{u_n-\phi(t_n+\gamma h)}+\phi'(t_n+\gamma h)}{1+Lh\gamma}$$
+	$$k_2 = f(t_n+h,u_n+h(1-\gamma)k_1+h\gamma k_2) = -L\sbr{u_n+h(1-\gamma)k_1+h\gamma k_2-\phi(t_n+h)}+\phi'(t_n+h)$$
+	$$\imp k_2 = -Lh\gamma k_2-L\sbr{u_n+h(1-\gamma)k_1-\phi(t_n+h)}+\phi'(t_n+h)$$
+	$$\imp (1+Lh\gamma)k_2 = -L\sbr{u_n+h(1-\gamma)k_1-\phi(t_n+h)}+\phi'(t_n+h)$$
+	$$\imp k_2 = \frac{-L\sbr{u_n+h(1-\gamma)k_1-\phi(t_n+h)}+\phi'(t_n+h)}{1+Lh\gamma}$$
+	$$u_{n+1} = u_n+h\sbr{(1-\gamma)k_1+\gamma k_2}$$
+	
+	We do the same for DIRK3 (abuse of language for DIRK of order 3).
+	$$k_1 = f(t_n+\gamma h,u_n+h\gamma k_1)$$
+	so the explicit formula for $k_1$ is the same as in DIRK2.
+	$$k_1 = \frac{-L\sbr{u_n-\phi(t_n+\gamma h)}+\phi'(t_n+\gamma h)}{1+Lh\gamma}$$
+	$$k_2 = f(t_n+(1-\gamma)h,u_n+h(1-2\gamma)k_2+h\gamma k_2)$$
+	$$= -L\sbr{u_n+h(1-2\gamma)k_1+h\gamma k_2-\phi(t_n+(1-\gamma)h)}+\phi'(t_n+(1-\gamma)h)$$
+	$$= -Lh\gamma k_2-L\sbr{u_n+h(1-2\gamma)k_1-\phi(t_n+(1-\gamma)h)}+\phi'(t_n+(1-\gamma)h)$$
+	$$\imp (1+Lh\gamma)k_2 = -L\sbr{u_n+h(1-2\gamma)k_1-\phi(t_n+(1-\gamma)h)}+\phi'(t_n+(1-\gamma)h)$$
+	$$\imp k_2 = \frac{-L\sbr{u_n+h(1-2\gamma)k_1-\phi(t_n+(1-\gamma)h)}+\phi'(t_n+(1-\gamma)h)}{1+Lh\gamma}$$
+	$$u_{n+1} = u_n+\frac h2[k_1+k_2]$$
+	
+	
+	\begin{center}
+		\includegraphics[scale=.3]{hw3 dirk2 err}
+		\includegraphics[scale=.3]{hw3 dirk3 err}
+	\end{center}
+	
+	For $h>10^{-4}$, the log--log graph roughly has a slope of 2, ie the error is on the order of $h$. For $10^{-5}<h<10^{-4}$, the log--log graph roughly has a slope of 1, ie the error is on the order of $h^2$. For $h<10^{-5}$, the slope is considerably steeper, ie the error is on the order of a high power of $h$.
+	
+	
+	\item Repeating (a) with $y(0)=\sin(\frac\pi4)+10$, we notably get a region for DIRK2 where error increases as $h$ decreases, and a region for DIRK3 of very small slope.
+	
+	\begin{center}
+		\includegraphics[scale=.3]{hw3 dirk2 err new ic}
+		\includegraphics[scale=.3]{hw3 dirk3 err new ic}
+	\end{center}
+	
+	For each method, we plot error vs time graphs for $h=10^{-1},10^{-2},10^{-3}$ and $T_\text{max}=10,1$.
+	
+	\begin{center}
+		\includegraphics[scale=.3]{hw3 dirk2 err vs t graph 1}
+		\includegraphics[scale=.3]{hw3 dirk2 err vs t graph 2}
+		\includegraphics[scale=.3]{hw3 dirk2 err vs t graph 3}
+		\includegraphics[scale=.3]{hw3 dirk2 err vs t graph 4}
+		\includegraphics[scale=.3]{hw3 dirk2 err vs t graph 5}
+		\includegraphics[scale=.3]{hw3 dirk2 err vs t graph 6}
+		
+		\includegraphics[scale=.3]{hw3 dirk3 err vs t graph 1}
+		\includegraphics[scale=.3]{hw3 dirk3 err vs t graph 2}
+		\includegraphics[scale=.3]{hw3 dirk3 err vs t graph 3}
+		\includegraphics[scale=.3]{hw3 dirk3 err vs t graph 4}
+		\includegraphics[scale=.3]{hw3 dirk3 err vs t graph 5}
+		\includegraphics[scale=.3]{hw3 dirk3 err vs t graph 6}
+	\end{center}
+	
+	
+	\item When solving the problem with the first initial condition, different orders of convergence were observed in each method. For DIRK3, note that it is 3rd order accurate, yet the graph for its error shows a regime in which error decayed as $h$, an instance of order reduction. When the initial condition is far from the forced response $\phi(t)$, the issue is worse. DIRK2 has a regime where error actually increases as $h$ gets smaller, and DIRK3 has a regime of error decaying as a very small power of $h$ in spite of its 3rd order accuracy. The error likely comes from the fact that we are using RK methods to solve a stiff problem. To try to minimize the effect of order reduction, we may try higher order stage methods.
+	
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\end{document}
