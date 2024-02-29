@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9.24) (preloaded format=pdflatex 2023.9.27)  22 FEB 2024 20:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9.24) (preloaded format=pdflatex 2023.9.27)  29 FEB 2024 03:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./hw3.tex
-(hw3.tex
+**./hw4.tex
+(hw4.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
 (C:\Users\RyanPC\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -982,27 +982,27 @@ Package: calligra 2012/04/10 v1.9 LaTeX package calligra
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
- (hw3.aux)
-\openout1 = `hw3.aux'.
+ (hw4.aux)
+\openout1 = `hw4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
 
 
 Package siunitx Warning: Detected the "physics" package:
@@ -1022,7 +1022,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 93.
+or `english'. on input line 95.
 
 (C:\Users\RyanPC\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
 kii
@@ -1063,19 +1063,19 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Info: Redefining \microtypecontext on input line 93.
-Package microtype Info: Applying patch `item' on input line 93.
-Package microtype Info: Applying patch `toc' on input line 93.
-Package microtype Info: Applying patch `eqnum' on input line 93.
-Package microtype Info: Applying patch `footnote' on input line 93.
-Package microtype Info: Applying patch `verbatim' on input line 93.
+LaTeX Info: Redefining \microtypecontext on input line 95.
+Package microtype Info: Applying patch `item' on input line 95.
+Package microtype Info: Applying patch `toc' on input line 95.
+Package microtype Info: Applying patch `eqnum' on input line 95.
+Package microtype Info: Applying patch `footnote' on input line 95.
+Package microtype Info: Applying patch `verbatim' on input line 95.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 93.
+LaTeX Info: Redefining \showhyphens on input line 95.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1083,14 +1083,14 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 93.
+Package hyperref Info: Link coloring OFF on input line 95.
 
-(hw3.out) (hw3.out)
+(hw4.out) (hw4.out)
 \@outlinefile=\write7
-\openout7 = `hw3.out'.
+\openout7 = `hw4.out'.
 
-Package csquotes Info: Making character " active on input line 93.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+Package csquotes Info: Making character " active on input line 95.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
 
 
 (C:\Users\RyanPC\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1099,7 +1099,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\RyanPC\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
 
 
 (C:\Users\RyanPC\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1108,231 +1108,92 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:\Users\RyanPC\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 96
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 98
 .
 
 (C:\Users\RyanPC\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+esint on input line 9
-6.
+8.
 
 (C:\Users\RyanPC\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
 File: uesint.fd 
 )
-Overfull \hbox (32.08852pt too wide) detected at line 121
- \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 I \OM
-S/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 zA\OT1/cmr/m/n/10 )[] = [] []  =[]\OMS/cmsy/
-m/n/10 )  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 I \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/i
-t/10 zA\OT1/cmr/m/n/10 )[]1[] = [] [] = [] []
+Overfull \hbox (22.55646pt too wide) detected at line 116
+\OML/cmm/m/it/10 u[] \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 []u[] \OT1/cmr/m/n/
+10 = (\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + 1)[]\OML/cmm/m/it/10 r[] \OT1/cmr/m/
+n/10 + [] \OML/cmm/m/it/10 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n \OMS/cmsy/m/n
+/10 ^^@ \OML/cmm/m/it/10 j\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 r[] \OT1/cmr/m/n/
+10 = \OML/cmm/m/it/10 D[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 r[]\OT1/cmr/m/n/10 ]
+ + [] \OML/cmm/m/it/10 []D[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 r[]\OT1/cmr/m/n/
+10 ] = \OML/cmm/m/it/10 D[] []
  []
 
-
-Overfull \hbox (47.0364pt too wide) detected at line 123
-\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) \OMS/cms
-y/m/n/10 ^^@ \OT1/cmr/m/n/10 1 = \OML/cmm/m/it/10 zb[]\OT1/cmr/m/n/10 (\OML/cmm
-/m/it/10 I \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 zA\OT1/cmr/m/n/10 )[]1[] = [] 
-[] = [] []
- []
-
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-Overfull \hbox (8.24107pt too wide) in paragraph at lines 130--131
-[][]$\OT1/cmtt/m/n/10 https : / / github . com / RokettoJanpu / scientific-[]co
-mputing-[]2-[]redux / blob / main / hw3 % 20RAS . ipynb$[] 
- []
-
-<hw3 dirk2 RAS.png, id=7, 578.16pt x 578.16pt>
-File: hw3 dirk2 RAS.png Graphic file (type png)
-<use hw3 dirk2 RAS.png>
-Package pdftex.def Info: hw3 dirk2 RAS.png  used on input line 133.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
 [1
 
 {C:/Users/RyanPC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (64.08855pt too wide) detected at line 172
- \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 I \OM
-S/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 zA\OT1/cmr/m/n/10 )[] = [] []  =[]\OMS/cmsy/
-m/n/10 )  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 I \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/i
-t/10 zA\OT1/cmr/m/n/10 )[]1[] = [] [] = [] []
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
  []
 
 
-Overfull \hbox (27.17557pt too wide) detected at line 175
-\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) \OMS/cms
-y/m/n/10 ^^@ \OT1/cmr/m/n/10 1 = \OML/cmm/m/it/10 zb[]\OT1/cmr/m/n/10 (\OML/cmm
-/m/it/10 I \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 zA\OT1/cmr/m/n/10 )[]1[] = [] 
-[] = [] [] = [][]
+Overfull \hbox (23.5808pt too wide) detected at line 147
+[][][] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 ^^U \OT1/cmr/m/n/10 + \OML/cmm/m/it/
+10 []\OT1/cmr/m/n/10 )(\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OML/cmm/m/it/1
+0 ^^U[] \OT1/cmr/m/n/10 + [](\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OML/cmm/m
+/it/10 []\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OML/cmm/m/i
+t/10 ^^U[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^U[] \OT1/cmr/m/n/10 + \OML/cmm/
+m/it/10 []^^U[] \OT1/cmr/m/n/10 + [](\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\
+OML/cmm/m/it/10 []^^U[]
  []
 
-[2 <./hw3 dirk2 RAS.png>]
-Overfull \hbox (41.65378pt too wide) detected at line 179
-[] \OML/cmm/m/it/10 R\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) = 0  
-\OMS/cmsy/m/n/10 ([])  ^^@\OT1/cmr/m/n/10 1 = [] [] []  \OMS/cmsy/m/n/10 ([])  
-[] [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 2  \OMS/cmsy/m/n/10
- ([])  [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 2
+[2]
+Overfull \hbox (60.38356pt too wide) detected at line 208
+\OML/cmm/m/it/10 N[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 I \OT1/cmr/m/n/10 = [] 
+\OML/cmm/m/it/10 ;  N \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 ;  N[] \OT1/cmr/m/n
+/10 = [] \OML/cmm/m/it/10 ;  N[] \OT1/cmr/m/n/10 = []
  []
 
-
-Overfull \hbox (0.31635pt too wide) in paragraph at lines 186--187
-[][]$\OT1/cmtt/m/n/10 https : / / github . com / RokettoJanpu / scientific-[]co
-mputing-[]2-[]redux / blob / main / hw3 % 20RAS .
+[3]
+Overfull \hbox (16.18996pt too wide) detected at line 262
+[]
  []
 
-<hw3 dirk3 ras 1.png, id=35, 578.16pt x 578.16pt>
-File: hw3 dirk3 ras 1.png Graphic file (type png)
-<use hw3 dirk3 ras 1.png>
-Package pdftex.def Info: hw3 dirk3 ras 1.png  used on input line 189.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk3 ras 2.png, id=36, 578.16pt x 578.16pt>
-File: hw3 dirk3 ras 2.png Graphic file (type png)
-<use hw3 dirk3 ras 2.png>
-Package pdftex.def Info: hw3 dirk3 ras 2.png  used on input line 190.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-
-Overfull \hbox (13.80434pt too wide) detected at line 208
- \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  \OT1/cmr/m/n/10 (1 + \OML/cmm/m/it/10 L
-h^^M\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^
-@\OML/cmm/m/it/10 L [] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^^[]\OT1/cmr/m/n/10 
-(\OML/cmm/m/it/10 t[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^Mh\OT1/cmr/m/n/10 ) 
- =[]\OMS/cmsy/m/n/10 )  \OML/cmm/m/it/10 k[] \OT1/cmr/m/n/10 = []
- []
-
-[3 <./hw3 dirk3 ras 1.png> <./hw3 dirk3 ras 2.png>]
-<hw3 dirk2 err.png, id=48, 578.16pt x 578.16pt>
-File: hw3 dirk2 err.png Graphic file (type png)
-<use hw3 dirk2 err.png>
-Package pdftex.def Info: hw3 dirk2 err.png  used on input line 228.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk3 err.png, id=49, 578.16pt x 578.16pt>
-File: hw3 dirk3 err.png Graphic file (type png)
-<use hw3 dirk3 err.png>
-Package pdftex.def Info: hw3 dirk3 err.png  used on input line 229.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk2 err new ic.png, id=50, 578.16pt x 578.16pt>
-File: hw3 dirk2 err new ic.png Graphic file (type png)
-<use hw3 dirk2 err new ic.png>
-Package pdftex.def Info: hw3 dirk2 err new ic.png  used on input line 238.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk3 err new ic.png, id=51, 578.16pt x 578.16pt>
-File: hw3 dirk3 err new ic.png Graphic file (type png)
-<use hw3 dirk3 err new ic.png>
-Package pdftex.def Info: hw3 dirk3 err new ic.png  used on input line 239.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
- [4 <./hw3 dirk2 err.png> <./hw3 dirk3 err.png>]
-<hw3 dirk2 err vs t graph 1.png, id=59, 578.16pt x 578.16pt>
-File: hw3 dirk2 err vs t graph 1.png Graphic file (type png)
-<use hw3 dirk2 err vs t graph 1.png>
-Package pdftex.def Info: hw3 dirk2 err vs t graph 1.png  used on input line 245
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk2 err vs t graph 2.png, id=60, 578.16pt x 578.16pt>
-File: hw3 dirk2 err vs t graph 2.png Graphic file (type png)
-<use hw3 dirk2 err vs t graph 2.png>
-Package pdftex.def Info: hw3 dirk2 err vs t graph 2.png  used on input line 246
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk2 err vs t graph 3.png, id=61, 578.16pt x 578.16pt>
-File: hw3 dirk2 err vs t graph 3.png Graphic file (type png)
-<use hw3 dirk2 err vs t graph 3.png>
-Package pdftex.def Info: hw3 dirk2 err vs t graph 3.png  used on input line 247
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk2 err vs t graph 4.png, id=62, 578.16pt x 578.16pt>
-File: hw3 dirk2 err vs t graph 4.png Graphic file (type png)
-<use hw3 dirk2 err vs t graph 4.png>
-Package pdftex.def Info: hw3 dirk2 err vs t graph 4.png  used on input line 248
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk2 err vs t graph 5.png, id=63, 578.16pt x 578.16pt>
-File: hw3 dirk2 err vs t graph 5.png Graphic file (type png)
-<use hw3 dirk2 err vs t graph 5.png>
-Package pdftex.def Info: hw3 dirk2 err vs t graph 5.png  used on input line 249
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk2 err vs t graph 6.png, id=64, 578.16pt x 578.16pt>
-File: hw3 dirk2 err vs t graph 6.png Graphic file (type png)
-<use hw3 dirk2 err vs t graph 6.png>
-Package pdftex.def Info: hw3 dirk2 err vs t graph 6.png  used on input line 250
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
- [5 <./hw3 dirk2 err new ic.png> <./hw3 dirk3 err new ic.png> <./hw3 dirk2 err 
-vs t graph 1.png> <./hw3 dirk2 err vs t graph 2.png> <./hw3 dirk2 err vs t grap
-h 3.png> <./hw3 dirk2 err vs t graph 4.png>]
-<hw3 dirk3 err vs t graph 1.png, id=75, 578.16pt x 578.16pt>
-File: hw3 dirk3 err vs t graph 1.png Graphic file (type png)
-<use hw3 dirk3 err vs t graph 1.png>
-Package pdftex.def Info: hw3 dirk3 err vs t graph 1.png  used on input line 252
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk3 err vs t graph 2.png, id=76, 578.16pt x 578.16pt>
-File: hw3 dirk3 err vs t graph 2.png Graphic file (type png)
-<use hw3 dirk3 err vs t graph 2.png>
-Package pdftex.def Info: hw3 dirk3 err vs t graph 2.png  used on input line 253
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk3 err vs t graph 3.png, id=77, 578.16pt x 578.16pt>
-File: hw3 dirk3 err vs t graph 3.png Graphic file (type png)
-<use hw3 dirk3 err vs t graph 3.png>
-Package pdftex.def Info: hw3 dirk3 err vs t graph 3.png  used on input line 254
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk3 err vs t graph 4.png, id=78, 578.16pt x 578.16pt>
-File: hw3 dirk3 err vs t graph 4.png Graphic file (type png)
-<use hw3 dirk3 err vs t graph 4.png>
-Package pdftex.def Info: hw3 dirk3 err vs t graph 4.png  used on input line 255
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk3 err vs t graph 5.png, id=79, 578.16pt x 578.16pt>
-File: hw3 dirk3 err vs t graph 5.png Graphic file (type png)
-<use hw3 dirk3 err vs t graph 5.png>
-Package pdftex.def Info: hw3 dirk3 err vs t graph 5.png  used on input line 256
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
-<hw3 dirk3 err vs t graph 6.png, id=80, 578.16pt x 578.16pt>
-File: hw3 dirk3 err vs t graph 6.png Graphic file (type png)
-<use hw3 dirk3 err vs t graph 6.png>
-Package pdftex.def Info: hw3 dirk3 err vs t graph 6.png  used on input line 257
-.
-(pdftex.def)             Requested size: 173.44933pt x 173.44933pt.
- [6 <./hw3 dirk2 err vs t graph 5.png> <./hw3 dirk2 err vs t graph 6.png> <./hw
-3 dirk3 err vs t graph 1.png> <./hw3 dirk3 err vs t graph 2.png> <./hw3 dirk3 e
-rr vs t graph 3.png> <./hw3 dirk3 err vs t graph 4.png>] [7 <./hw3 dirk3 err vs
- t graph 5.png> <./hw3 dirk3 err vs t graph 6.png>] (hw3.aux)
+[4] [5] (hw4.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
-Package rerunfilecheck Info: File `hw3.out' has not changed.
+Package rerunfilecheck Info: File `hw4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34343 strings out of 475337
- 732615 string characters out of 5760066
- 1939785 words of memory out of 5000000
- 55178 multiletter control sequences out of 15000+600000
- 567715 words of font info for 98 fonts, out of 8000000 for 9000
+ 34127 strings out of 475337
+ 725890 string characters out of 5760066
+ 1941785 words of memory out of 5000000
+ 54969 multiletter control sequences out of 15000+600000
+ 567496 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,11n,121p,1002b,1361s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,14n,121p,1002b,1279s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmbx10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmex10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmmi10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/RyanPC/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/RyanPC/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/RyanPC/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/R
-yanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:
-/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmtt10.pfb>
-Output written on hw3.pdf (7 pages, 574547 bytes).
+fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/RyanPC/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/RyanPC/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/RyanPC/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/R
+yanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C
+:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+5.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr7.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy5.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on hw4.pdf (5 pages, 171453 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 17004 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
+ 16397 words of extra memory for PDF output out of 17280 (max. 10000000)
 
