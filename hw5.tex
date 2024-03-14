@@ -131,12 +131,19 @@
 		O(h^3)&: \frac43+\frac{\a_0}{6}-2\b_{-1}-\frac{\b_0}{2}=0 \iff \frac43+\frac{\a_0}{6}=2\b_{-1}+\frac{\b_0}{2}
 	\end{align*}
 	
-	\item
-	
-	\item
-	
-	\item 
-	
+	\item Restricting to consistent methods, so that $\a_1=-1-a_0$, the roots of $\rho(z)$ are
+	\[z_\pm = \frac{-\a_0\pm\sqrt{\a_0^2-4\a_1}}{2}
+	= \frac{-\a_0\pm\sqrt{a_0^2+4a_0+4}}{2}
+	= \frac{-\a_0\pm|a_0+2|}{2}\]
+	Checking one of the root conditions,
+	\[|z_\pm| \le 1
+	\iff |-a_0\pm|a_0+2|| \le 2\]
+	Below is a plot of the functions $x\mapsto|-x\pm|x+2||$.
+	\begin{center}
+		\includegraphics[scale=.2]{hw5 p1c}
+	\end{center}
+	We see that $|z_\pm|\le1$ iff $-2\le\a_0\le 0$. To fulfill the other root condition (roots with modulus 1 have multiplicity 1), we exclude the case $\a_0=-2$. Thus the method is consistent iff $-2<\a_0\le0$.
+
 \end{enumerate}
 
 
@@ -197,8 +204,9 @@
 	
 	\item The shadow Hamiltonian is
 	$$H^*(p_n,q_n) = \frac{p_n^2}{2m} + \frac12m\om^2q_n^2\sbr{1 - \frac14h^2\om^2}
-	= \m{p_n \\ q_n}^T S \m{p_n \\ q_n},
-	\quad S := \m{d & 0 \\ 0 & e},
+	= \m{p_n \\ q_n}^T S \m{p_n \\ q_n}$$
+	where we define
+	$$S := \m{d & 0 \\ 0 & e},
 	\quad d := \frac1{2m},
 	\quad e := \frac12m\om^2\sbr{1 - \frac14h^2\om^2}$$
 	We compute

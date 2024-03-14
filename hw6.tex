@@ -1,0 +1,190 @@
+\documentclass{article}
+\usepackage{amsfonts, amsthm, amsmath, amssymb, mathtools, ulem, mathrsfs, physics, esint, siunitx, tikz-cd}
+\usepackage{pdfpages, fullpage, color, microtype, cancel, textcomp, markdown, hyperref, graphicx}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\graphicspath{{./images/}}
+\usepackage[english]{babel}
+\usepackage[autostyle, english=american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{xparse}
+\usepackage{tikz}
+
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\script}[1]{\ensuremath{\mathcalligra{#1}}}
+\newcommand{\scr}{\script r}
+
+% fonts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+\def\mbf#1{\mathbf{#1}}
+\def\tbf#1{\textbf{#1}}
+
+% common bold letters
+\def\bP{\mbb{P}}
+\def\bC{\mbb{C}}
+\def\bH{\mbb{H}}
+\def\bI{\mbb{I}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\def\bN{\mbb{N}}
+
+% brackets
+\newcommand{\br}[1]{\left(#1\right)}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\brc}[1]{\left\{#1\right\}}
+\newcommand{\lbr}[1]{\left\langle#1\right\rangle}
+
+% vectors
+\renewcommand{\i}{\hat{\imath}}
+\renewcommand{\j}{\hat{\jmath}}
+\renewcommand{\k}{\hat{k}}
+\newcommand{\proj}[2]{\text{proj}_{#2}\br{#1}}
+\newcommand{\m}[2][b]{\begin{#1matrix}#2\end{#1matrix}}
+\newcommand{\arr}[3][\sbr]{#1{\begin{array}{#2}#3\end{array}}}
+
+% misc
+\NewDocumentCommand{\seq}{O{n} O{1} O{\infty} m}{\br{#4}_{{#1}={#2}}^{#3}}
+\NewDocumentCommand{\app}{O{x} O{\infty}}{\xrightarrow{#1\to#2}}
+\newcommand{\sm}{\setminus}
+\newcommand{\sse}{\subseteq}
+\renewcommand{\ss}{\subset}
+\newcommand{\vn}{\varnothing}
+\newcommand{\lc}{\epsilon_{ijk}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vp}{\varphi}
+\renewcommand{\th}{\theta}
+\newcommand{\cjg}[1]{\overline{#1}}
+\newcommand{\inv}{^{-1}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\newcommand{\ans}{\tbf{Ans. }}
+\newcommand{\pf}{\tbf{Pf. }}
+\newcommand{\imp}{\implies}
+\newcommand{\impleft}{\reflectbox{$\implies$}}
+\newcommand{\ck}{\frac1{4\pi\ep_0}}
+\newcommand{\ckb}{4\pi\ep_0}
+\newcommand{\sto}{\longrightarrow}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\intt}{int}
+\DeclareMathOperator{\bd}{bd}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\fxn}[5]{#1:\begin{array}{rcl}#2&\longrightarrow & #3\\[-0.5mm]#4&\longmapsto &#5\end{array}}
+\newcommand{\sep}[1][.5cm]{\vspace{#1}}
+\DeclareMathOperator{\card}{card}
+\renewcommand{\ip}[2]{\lbr{#1,#2}}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\Arg}{Arg}
+
+% title
+\title{Scientific Computing HW 6}
+\author{Ryan Chen}
+%\date{\today}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+	
+\maketitle
+
+
+
+\begin{enumerate}
+	
+\item In the following cases, the system $Au=f$ is shown on the left, and the block structure of $A$ (for a general $J\times J$ mesh) is compactly rewritten on the right.
+
+\begin{enumerate}
+	
+	\item
+	\includegraphics[scale=.1]{hw6 a full}
+	\includegraphics[scale=.09]{hw6 a block}
+	
+	\item
+	\includegraphics[scale=.1]{hw6 b full}
+	\includegraphics[scale=.08]{hw6 b block}
+
+	
+	
+	\item
+	\includegraphics[scale=.1]{hw6 c full}
+	\includegraphics[scale=.08]{hw6 c block}
+	
+	
+	\item
+	\includegraphics[scale=.1]{hw6 d full}
+	\includegraphics[scale=.08]{hw6 d block}
+	
+	
+	\item In this case we do not compactly rewrite the block structure of $A$, but it is still clear.
+	\begin{center}
+		\includegraphics[scale=.1]{hw6 e full}
+	\end{center}
+	
+\end{enumerate}
+
+
+
+\item 
+
+\begin{enumerate}
+	
+	
+	
+	\item The BVP on the domain $\Omega:=[-\pi,\pi]\times[0,2]$ is
+	$$u_{xx} + u_{yy} = g(x) :=
+	\begin{cases}
+		-\cos x, & -\frac\pi2 \le x \le \frac\pi2\\
+		0, & \text{else}
+	\end{cases} \quad (2.1)$$
+	with BCs
+	$$u\eval_{x=\pi} = u\eval_{x=-\pi},
+	\quad u_x\eval_{x=\pi} = u_x\eval_{x=-\pi},
+	\quad u\eval_{y=0} = 0,
+	\quad u_y\eval_{y=2} = 0$$
+	
+	
+	
+	\item Fix $J\in\bN$ and set mesh steps in the $x$ and $y$ axes,
+	$$h_x := \frac{2\pi}{J},
+	\quad h_y := \frac{2}{J}$$
+	Then
+	$$u_{xx}(x,y) = \frac{1}{h_x^2}\sbr{u(x+h_x,y) - 2u(x,y) + u(x-h_x,y)} + O(h_x^2)$$
+	$$u_{yy}(x,y) = \frac{1}{h_y^2}\sbr{u(x,y+h_y) - 2u(x,y) + u(x,y-h_y)} + O(h_y^2)$$
+	Plug these expressions into (2.1) and use the compass direction notation from lecture.
+	$$-2u_P\sbr{\frac{1}{h_x^2} + \frac{1}{h_y^2}} + \frac{1}{h_x^2}[u_E + u_W] + \frac{1}{h_y^2}[u_N + u_S] = g_P$$
+	Set $a:=\frac{1}{h_x^2},~b:=\frac{1}{h_y^2},~c:=a+b$, so that
+	$$-2cu_P + a[u_E + u_W] + b[u_N + u_S] = g_P \quad (2.2)$$
+	
+	To explore the appropriate numerical method, take $J=4$. The mesh steps create a mesh from $\Omega$ with $(J+1)^2=25$ points. Using the BCs, it is enough to solve for the values of 16 points, labeled below.
+	
+	\begin{center}
+		\includegraphics[scale=.1]{hw6 2 grid}
+	\end{center}
+	
+	Using the fact $u\eval_{y=0}=0$, the values of the points on the bottom edge are all 0. Using the fact $u_y\eval_{y=2}=0$, the values of the ``ghost points'' above the mesh from left to right are, respectively, $u_2,~u_6,~u_{10},~u_{14}$. Using the fact $u\eval_{x=-\pi}=u\eval_{x=\pi}$, the following pairs of points are treated as adjacent: 1 and 13, 2 and 14, 3 and 15, 4 and 16. Apply (2.2) to each point in the mesh to obtain a system $Au=f$, shown below on the left, with the block structure of $A$ compactly rewritten on the right.
+	
+	\includegraphics[scale=.1]{hw6 2 full}
+	\includegraphics[scale=.09]{hw6 2 block}
+	
+	
+	
+	\item The stationary heat distribution is solved for $J=100$ and plotted below.
+	
+	Code: \url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/hw6.ipynb}
+	
+	\begin{center}
+		\includegraphics[scale=1]{hw6 2 plot}
+	\end{center}
+\end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}
