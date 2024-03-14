@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9.24) (preloaded format=pdflatex 2023.9.27)  14 MAR 2024 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9.24) (preloaded format=pdflatex 2023.9.27)  14 MAR 2024 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1216,17 +1216,23 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<hw6 2 plot.png, id=53, 462.528pt x 346.896pt>
+<hw6 2 code.png, id=53, 533.74406pt x 576.65437pt>
+File: hw6 2 code.png Graphic file (type png)
+<use hw6 2 code.png>
+Package pdftex.def Info: hw6 2 code.png  used on input line 182.
+(pdftex.def)             Requested size: 320.2489pt x 345.99529pt.
+<hw6 2 plot.png, id=55, 462.528pt x 346.896pt>
 File: hw6 2 plot.png Graphic file (type png)
 <use hw6 2 plot.png>
-Package pdftex.def Info: hw6 2 plot.png  used on input line 183.
+Package pdftex.def Info: hw6 2 plot.png  used on input line 186.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-Overfull \hbox (39.77187pt too wide) in paragraph at lines 183--184
+Overfull \hbox (39.77187pt too wide) in paragraph at lines 186--187
  [] 
  []
 
-[4 <./hw6 2 full.png> <./hw6 2 block.png> <./hw6 2 plot.png>] (hw6.aux)
+[4 <./hw6 2 full.png> <./hw6 2 block.png> <./hw6 2 code.png>] [5 <./hw6 2 plot.
+png>] (hw6.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -1235,13 +1241,13 @@ Package rerunfilecheck Info: File `hw6.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34269 strings out of 475337
- 728727 string characters out of 5760066
+ 34281 strings out of 475337
+ 728951 string characters out of 5760066
  1931785 words of memory out of 5000000
- 55113 multiletter control sequences out of 15000+600000
+ 55124 multiletter control sequences out of 15000+600000
  567236 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,9n,121p,1002b,1251s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,9n,121p,1002b,1357s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmex10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmmi10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type
@@ -1257,9 +1263,9 @@ cm/cmsy10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmsy7.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmtt10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on hw6.pdf (4 pages, 7407523 bytes).
+Output written on hw6.pdf (5 pages, 7439106 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 14926 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
+ 14931 words of extra memory for PDF output out of 17280 (max. 10000000)
 

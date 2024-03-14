@@ -168,17 +168,20 @@
 		\includegraphics[scale=.1]{hw6 2 grid}
 	\end{center}
 	
-	Using the fact $u\eval_{y=0}=0$, the values of the points on the bottom edge are all 0. Using the fact $u_y\eval_{y=2}=0$, the values of the ``ghost points'' above the mesh from left to right are, respectively, $u_2,~u_6,~u_{10},~u_{14}$. Using the fact $u\eval_{x=-\pi}=u\eval_{x=\pi}$, the following pairs of points are treated as adjacent: 1 and 13, 2 and 14, 3 and 15, 4 and 16. Apply (2.2) to each point in the mesh to obtain a system $Au=f$, shown below on the left, with the block structure of $A$ compactly rewritten on the right.
+	Using the fact $u\eval_{y=0}=0$, the values of the points on the bottom edge are all 0. Using the fact $u_y\eval_{y=2}=0$, the values of the ``ghost points'' above the mesh from left to right are, respectively, $u_2,~u_6,~u_{10},~u_{14}$. Using the fact $u\eval_{x=-\pi}=u\eval_{x=\pi}$, the following pairs of points are treated as adjacent: 1 and 13, 2 and 14, 3 and 15, 4 and 16. Apply (2.2) to each point in the mesh to obtain a system $Au=f$, shown below on the left, with the block structure of $A$ compactly rewritten on the right. The values of $a,b,c$ are given in the last part.
 	
 	\includegraphics[scale=.1]{hw6 2 full}
 	\includegraphics[scale=.09]{hw6 2 block}
 	
 	
 	
-	\item The stationary heat distribution is solved for $J=100$ and plotted below.
+	\item The stationary heat distribution is solved for $J=100$.
 	
 	Code: \url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/hw6.ipynb}
-	
+	\begin{center}
+		\includegraphics[scale=.6]{hw6 2 code}
+	\end{center}
+	Stationary heat distribution:
 	\begin{center}
 		\includegraphics[scale=1]{hw6 2 plot}
 	\end{center}
