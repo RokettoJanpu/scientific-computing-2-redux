@@ -195,13 +195,13 @@ These cases illustrate the principle of ``the path of least resistance'', in the
 	
 	
 	\item Compute
-	$$G_y(x,y) =
+	$$\ptl_yG(x,y) =
 	\begin{cases}
 		1-x, & y<x\\
 		-x, & y>x
 	\end{cases}$$
 	Then
-	$$\int_0^1 v'(y)G_y(x,y)dy = \int_0^x v'(y)G_y(x,y)dy + \int_x^1 v'(y)G_y(x,y)dy$$
+	$$\int_0^1 v'(y)\ptl_yG(x,y)dy = \int_0^x v'(y)\ptl_yG(x,y)dy + \int_x^1 v'(y)\ptl_yG(x,y)dy$$
 	$$= (1-x)\int_0^x v'(y)dy - x\int_x^1 v'(y)dy
 	= \int_0^x v'(y)dy - x\int_0^x v'(y)dy - x\int_x^1 v'(y)dy
 	= \int_0^x v'(y)dy - x\int_0^1 v'(y)dy$$
@@ -235,7 +235,7 @@ These cases illustrate the principle of ``the path of least resistance'', in the
 	
 	
 	\item Recall that
-	$$G_y(x,y) =
+	$$\ptl_yG(x,y) =
 	\begin{cases}
 		1-x, & y<x\\
 		-x, & y>x
@@ -247,10 +247,10 @@ These cases illustrate the principle of ``the path of least resistance'', in the
 		-\frac{1}{x_{i+1}-x_i}, & x_i<x<x_{i+1}
 	\end{cases}$$
 	First write
-	$$\int_0^1 [I_hu]'(y)G_y(x_j,y)dy
-	= \int_0^1 \sbr{\sum_{i=1}^n u(x_i)\phi_i'(y)}G_y(x_j,y)dy$$
-	$$= \sum_{i=1}^n u(x_i)\int_0^1 \phi_i'(y)G_y(x_j,y)dy
-	= \sum_{i=1}^n u(x_i)\underbrace{\int_{x_{i-1}}^{x_{i+1}} \phi_i'(y)G_y(x_j,y)dy}_{=:a_{ij}}$$
+	$$\int_0^1 [I_hu]'(y)\ptl_yG(x_j,y)dy
+	= \int_0^1 \sbr{\sum_{i=1}^n u(x_i)\phi_i'(y)}\ptl_yG(x_j,y)dy$$
+	$$= \sum_{i=1}^n u(x_i)\int_0^1 \phi_i'(y)\ptl_yG(x_j,y)dy
+	= \sum_{i=1}^n u(x_i)\underbrace{\int_{x_{i-1}}^{x_{i+1}} \phi_i'(y)\ptl_yG(x_j,y)dy}_{=:a_{ij}}$$
 	
 	Now examine cases.
 	\begin{itemize}
@@ -272,7 +272,7 @@ These cases illustrate the principle of ``the path of least resistance'', in the
 		
 	\end{itemize}
 	This means $a_{ij}=\delta_{ij}$, thus
-	$$\int_0^1 [I_hu]'(y)G_y(x_j,y)dy = \sum_{i=1}^n u(x_i)\delta_{ij} = u(x_j)$$
+	$$\int_0^1 [I_hu]'(y)\ptl_yG(x_j,y)dy = \sum_{i=1}^n u(x_i)\delta_{ij} = u(x_j)$$
 
 \end{enumerate}
 
