@@ -196,8 +196,20 @@
 \begin{enumerate}
 	
 	
-	\item Recall $F(u_L,u_R)=f(u^*(u_L,u_R))$. From the fact $f''>0$, $f'$ is increasing. Suppose $u_L\le u_R$. In case 1, from $f'(u_L)\ge0$ we have $f'\ge0$ hence $f$ is increasing, so $F(u_L,u_R)=\min_{u_L\le u\le u_R}f(u)=f(u_L)$. In case 2, from $f'(u_R)\le0$, we have $f'\le0$ hence $f$ is decreasing, so $F(u_L,u_R)=\min_{u_L\le u\le u_R}f(u)=f(u_R)$. In case 3, we have $f$ is increasing, so $(f(u_L)-f(u_R))/(u_L-u_R)>0$ hence $F(u_L,u_R)=f(u_L)$. Similar arguments can be made for when we suppose $u_L>u_R$.
-	
+	\item Recall that $F(u_L,u_R)=f(u^*(u_L,u_R))$. From the fact $f''>0$, we know $f'$ is increasing. For now, suppose $u_L\le u_R$.
+	\begin{itemize}
+		\item In case 1, from $f'(u_L)\ge0$ we have $f'\ge0$ hence $f$ is increasing, thus
+		\[F(u_L,u_R) = f(u_L) = \min_{u_L\le u\le u_R}f(u)\]
+		\item In case 2, from $f'(u_R)\le0$, we have $f'\le0$ hence $f$ is decreasing, thus
+		\[F(u_L,u_R) = f(u_R) = \min_{u_L\le u\le u_R}f(u)\]
+		\item In case 3, from $f'(u_L)\ge0$ we have $f'\ge0$ hence $f$ is increasing. This along with $u_L\le u_R$ gives $f(u_L)<f(u_R)$, which implies 
+		\[\frac{f(u_L)-f(u_R)}{u_L-u_R} > 0\]
+		From this we have $u^*=u_L$, which along with $f$ being increasing implies
+		\[F(u_L,u_R) = f(u_L) = \min_{u_L\le u\le u_R}f(u)\]
+		\item In case 4, from $f'(u_s)=0$ and $f''>0$, we know $f$ attains a global minimum at $u_s$, thus
+		\[F(u_L,u_R) = f(u_s) = \min_{u_L\le u\le u_R}f(u)\]
+	\end{itemize}
+	Similar arguments can be made for when we suppose $u_L>u_R$.
 	
 \end{enumerate}
 
