@@ -1,0 +1,279 @@
+\documentclass{article}
+\usepackage{amsfonts, amsthm, amsmath, amssymb, mathtools, ulem, mathrsfs, physics, esint, siunitx, tikz-cd}
+\usepackage{pdfpages, fullpage, color, microtype, cancel, textcomp, markdown, hyperref, graphicx}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\graphicspath{{./images/}}
+\usepackage[english]{babel}
+\usepackage[autostyle, english=american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage{xparse}
+\usepackage{tikz}
+
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\script}[1]{\ensuremath{\mathcalligra{#1}}}
+\newcommand{\scr}{\script r}
+
+% fonts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+\def\mbf#1{\mathbf{#1}}
+\def\tbf#1{\textbf{#1}}
+
+% common bold letters
+\def\bP{\mbb{P}}
+\def\bC{\mbb{C}}
+\def\bH{\mbb{H}}
+\def\bI{\mbb{I}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+\def\bN{\mbb{N}}
+
+% brackets
+\newcommand{\br}[1]{\left(#1\right)}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\brc}[1]{\left\{#1\right\}}
+\newcommand{\lbr}[1]{\left\langle#1\right\rangle}
+
+% vectors
+\renewcommand{\i}{\hat{\imath}}
+\renewcommand{\j}{\hat{\jmath}}
+\renewcommand{\k}{\hat{k}}
+\newcommand{\proj}[2]{\text{proj}_{#2}\br{#1}}
+\newcommand{\m}[2][b]{\begin{#1matrix}#2\end{#1matrix}}
+\newcommand{\arr}[3][\sbr]{#1{\begin{array}{#2}#3\end{array}}}
+
+% misc
+\NewDocumentCommand{\seq}{O{n} O{1} O{\infty} m}{\br{#4}_{{#1}={#2}}^{#3}}
+\NewDocumentCommand{\app}{O{x} O{\infty}}{\xrightarrow{#1\to#2}}
+\newcommand{\sm}{\setminus}
+\newcommand{\sse}{\subseteq}
+\renewcommand{\ss}{\subset}
+\newcommand{\vn}{\varnothing}
+\newcommand{\lc}{\epsilon_{ijk}}
+\newcommand{\ep}{\epsilon}
+\newcommand{\vp}{\varphi}
+\renewcommand{\th}{\theta}
+\newcommand{\cjg}[1]{\overline{#1}}
+\newcommand{\inv}{^{-1}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\newcommand{\ans}{\tbf{Ans. }}
+\newcommand{\pf}{\tbf{Pf. }}
+\newcommand{\imp}{\implies}
+\newcommand{\impleft}{\reflectbox{$\implies$}}
+\newcommand{\ck}{\frac1{4\pi\ep_0}}
+\newcommand{\ckb}{4\pi\ep_0}
+\newcommand{\sto}{\longrightarrow}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\intt}{int}
+\DeclareMathOperator{\bd}{bd}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\fxn}[5]{#1:\begin{array}{rcl}#2&\longrightarrow & #3\\[-0.5mm]#4&\longmapsto &#5\end{array}}
+\newcommand{\sep}[1][.5cm]{\vspace{#1}}
+\DeclareMathOperator{\card}{card}
+\renewcommand{\ip}[2]{\lbr{#1,#2}}
+\renewcommand{\bar}{\overline}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\Arg}{Arg}
+\newcommand{\ptl}{\partial}
+
+% title
+\title{Scientific Computing HW 12}
+\author{Ryan Chen}
+%\date{\today}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+	
+	
+	
+\maketitle
+
+
+
+\begin{enumerate}
+
+
+
+\item
+
+
+
+\begin{enumerate}
+
+
+	\item The PDE is
+	$$\rho_t + \ptl_x f(\rho) = 0,
+	\quad f(\rho) := -\rho\ln\rho$$
+	which becomes
+	$$\rho_t + f'(\rho)\rho_x = 0,
+	\quad f'(\rho) = -\ln\rho - \rho\frac1\rho = -\ln\rho - 1$$
+	Consider the curve $\Gamma$ given by $x(t)$ satisfying
+	$$\dv{x}{t} = f'(\rho(x(t),t)),
+	\quad x(0) = x_0$$
+	We see that $\Gamma$ is a characteristic of the PDE since
+	$$\dv{t}\rho(x(t),t) = \rho_t + \rho_x\dv{x}{t}
+	= \rho_t + \rho_xf'(\rho(x(t),t))
+	= 0$$
+	hence $\rho$ is constant on $\Gamma$. In particular,
+	$$\rho(x(t),t) = \rho(x(0),0) = \rho_0(x_0)$$
+	Thus $\Gamma$ is given by
+	$$\dv{x}{t} = f'(\rho_0(x_0))
+	\imp x(t) = f'(\rho_0(x_0))t + x_0
+	= [-\ln\rho_0(x_0)-1]t + x_0$$
+	
+	
+	\item Some characteristics are plotted below. Those with $x_0<0$ are red, those with $x_0>0$ are blue, and the shock line is green.
+	
+	\begin{center}
+		\includegraphics[scale=.3]{hw12 plot}
+	\end{center}
+	
+	
+	\item In this part the initial density is
+	$$\rho_0(x) = \frac12 + \frac{9}{10\pi}\arctan x$$
+	First compute
+	$$f''(\rho) = -\rho\inv,
+	\quad \rho_0'(x) = \frac{9}{10\pi}(x^2+1)\inv$$
+	The equation of a characteristic starting at a point $(x_0,0)$, considered as function of $t$ and $x_0$, is
+	$$x = f'(\rho_0(x_0))t + x_0$$
+	Then the shock appears at time $t_s$ when $\ptl_{x_0}x=0$, i.e.
+	$$f''(\rho_0(x_0))\rho_0'(x_0)t_s + 1 = 0$$
+	$$\imp t_s = -\sbr{f''(\rho_0(x_0))\rho_0'(x_0)}\inv
+	= -\sbr{-\br{\frac12 + \frac{9}{10\pi}\arctan x_0}\inv \frac{9}{10\pi}(x_0^2+1)\inv}\inv$$
+	$$= \br{\frac12 + \frac{9}{10\pi}\arctan x_0} \frac{10\pi}{9}(x_0^2+1)
+	= \br{\frac{5\pi}{9} + \arctan x_0}(x_0^2 + 1)$$
+	Now we find
+	$$\lim_{x\to\pm\infty}\rho_0(x) = \frac12 + \frac{9}{10\pi}\br{\pm\frac\pi2}
+	= \frac12 \pm \frac{9}{20}
+	\imp \rho_L = \frac{1}{20},
+	\quad \rho_R = \frac{19}{20}$$
+	Then compute
+	$$f(\rho_L) = -\frac{1}{20}\ln\frac{1}{20} = \frac{1}{20}\ln20$$
+	$$f(\rho_R) = -\frac{19}{20}\ln\frac{19}{20} = \frac{19}{20}\ln\frac{20}{19}$$
+	Thus the eventual shock speed is
+	$$s = \frac{f(\rho_L) - f(\rho_R)}{\rho_L - \rho_R}
+	= \frac{\frac{1}{20}\ln20 - \frac{19}{20}\ln\frac{20}{19}}{\frac{1}{20} - \frac{19}{20}}
+	= \frac{\ln20 - 19\ln20 + 19\ln19}{1 - 19}
+	= \ln20 - \frac{19}{18}\ln19
+	\approx -0.112$$
+
+
+\end{enumerate}
+
+
+
+\item
+
+\begin{enumerate}
+	
+	
+	\item Using $f(u)=au$,
+	$$u_j^* = u_j^n - \frac{ak}{h}(u_{j+1}^n - u_j^n)$$
+	In turn,
+	\begin{align*}
+		u_j^{n+1} &= \frac12\sbr{u_j^n + u_j^n - \frac{ak}{h}(u_{j+1}^n - u_j^n)} - \frac{ak}{2h}\sbr{u_j^n - \frac{ak}{h}(u_{j+1} - u_j^n) - u_{j-1}^n + \frac{ak}{h}(u_j^n - u_{j-1}^n)}\\
+		&= u_j^n - \frac{ak}{2h}(u_{j+1}^n - u_j^n + u_j^n - u_{j-1}^n) + \frac{a^2k^2}{2h^2}(u_{j+1}^n - u_j^n - u_j^n + u_{j-1}^n)\\
+		&= u_j^n - \frac{ak}{2h}(u_{j+1}^n - u_{j-1}^n) + \frac{a^2k^2}{2h^2}(u_{j+1}^n - 2u_j^n + u_{j-1}^n)
+	\end{align*}
+	Which coincides with Lax--Wendroff.
+	
+	
+\end{enumerate}
+
+
+
+\item
+
+\begin{enumerate}
+	
+	
+	\item Recall $F(u_L,u_R)=f(u^*(u_L,u_R))$. From the fact $f''>0$, $f'$ is increasing. Suppose $u_L\le u_R$. In case 1, from $f'(u_L)\ge0$ we have $f'\ge0$ hence $f$ is increasing, so $F(u_L,u_R)=\min_{u_L\le u\le u_R}f(u)=f(u_L)$. In case 2, from $f'(u_R)\le0$, we have $f'\le0$ hence $f$ is decreasing, so $F(u_L,u_R)=\min_{u_L\le u\le u_R}f(u)=f(u_R)$. In case 3, we have $f$ is increasing, so $(f(u_L)-f(u_R))/(u_L-u_R)>0$ hence $F(u_L,u_R)=f(u_L)$. Similar arguments can be made for when we suppose $u_L>u_R$.
+	
+	
+\end{enumerate}
+
+
+
+\item Code: \url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/hw13q3.ipynb}
+
+Lax--Friedrichs:
+\begin{center}
+	\includegraphics[scale=.23]{hw13 sol t = 0 method 0}
+	\includegraphics[scale=.23]{hw13 sol t = 1 method 0}
+	\includegraphics[scale=.23]{hw13 sol t = 2 method 0}
+	\includegraphics[scale=.23]{hw13 sol t = 3 method 0}
+	\includegraphics[scale=.3]{hw13 sol t = 4 method 0}
+	\includegraphics[scale=.3]{hw13 sol t = 5 method 0}
+	\includegraphics[scale=.3]{hw13 sol t = 6 method 0}
+\end{center}
+
+Richtmyer:
+\begin{center}
+	\includegraphics[scale=.23]{hw13 sol t = 0 method 1}
+	\includegraphics[scale=.23]{hw13 sol t = 1 method 1}
+	\includegraphics[scale=.23]{hw13 sol t = 2 method 1}
+	\includegraphics[scale=.23]{hw13 sol t = 3 method 1}
+	\includegraphics[scale=.3]{hw13 sol t = 4 method 1}
+	\includegraphics[scale=.3]{hw13 sol t = 5 method 1}
+	\includegraphics[scale=.3]{hw13 sol t = 6 method 1}
+\end{center}
+
+MacCormack:
+\begin{center}
+	\includegraphics[scale=.23]{hw13 sol t = 0 method 2}
+	\includegraphics[scale=.23]{hw13 sol t = 1 method 2}
+	\includegraphics[scale=.23]{hw13 sol t = 2 method 2}
+	\includegraphics[scale=.23]{hw13 sol t = 3 method 2}
+	\includegraphics[scale=.3]{hw13 sol t = 4 method 2}
+	\includegraphics[scale=.3]{hw13 sol t = 5 method 2}
+	\includegraphics[scale=.3]{hw13 sol t = 6 method 2}
+\end{center}
+
+
+
+\item Write the PDE as
+$$u_t = \underbrace{-u_{xxxx} - u_{xx}}_{=:Lu} \underbrace{-\frac12(u^2)_x}_{=:N(u)}$$
+First solving $u_t=Lu$, write
+$$u(x,t) = \sum_{k=-\infty}^{\infty} u_k(t)e^{ikx/16}$$
+so that
+$$u_t = \sum_{k=-\infty}^{\infty} u_k'(t)e^{ikx/16},
+\quad u_{xx} = \sum_{k=-\infty}^{\infty} u_k(t)\br{-\br{\frac{k}{16}}^2}e^{ikx/16},
+\quad u_{xxxx} = \sum_{k=-\infty}^{\infty} u_k(t)\br{\frac{k}{16}}^4e^{ikx/16}$$
+Plugging in these derivatives and using the fact that the basis functions $e^{ikx/16}$ are linearly independent,
+$$u_k'(t) = \sbr{\br{\frac{k}{16}}^2 - \br{\frac{k}{16}}^4}u_k(t)
+\imp u_k(t) = u_k(0)e^{[(k/16)^2 - (k/16)^4]t}$$
+giving the solution
+$$u(x,t) = \sum_{k=-\infty}^{\infty} u_k(0)e^{ikx/16}e^{[(k/16)^2 - (k/16)^4]t},
+\quad u_k(0) = \frac{1}{32\pi}\int_0^{32\pi} u(x,0)e^{-ikx/16}dx$$
+
+Define the solution operator $e^{tL}$ by specifying its action on the basis functions $e^{ikx/16}$.
+$$e^{tL}(e^{ikx/16}) := e^{ikx/16}e^{[(k/16)^2 - (k/16)^4]t}$$
+We check that we can rewrite the solution as
+$$u(x,t) = \sum_{k=-\infty}^{\infty} u_k(0)e^{tL}(e^{ikx/16})
+= e^{tL}\sum_{k=-\infty}^{\infty} u_k(0)e^{ikx/16}
+= e^{tL}u(x,0)$$
+Let $v$ satisfy $u=e^{tL}v$. Plugging into the equation $u_t=Lu+N(u)$, we obtain an equation for $v$.
+$$Le^{tL}v + e^{tL}v_t = Le^{tL}v + N(e^{tL}v)
+\imp e^{tL}v_t = N(e^{tL}v)
+\imp v_t = e^{-tL}N(e^{tL}v)$$
+
+The file KdVrkm.m was modified to solve this PDE:
+
+\url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/KdVrkm.m}
+\begin{center}
+	\includegraphics[scale=.3]{hw13 q4 plot}
+\end{center}
+The plot is very similar to the one in the linked article. The initial data does not vary significantly, but it splits into many high frequency waves, giving rise to a complex looking solution. On the other hand, characteristic lines appear, upon which solutions appear stationary, and moreover nearby solutions tend toward these lines.
+
+\end{enumerate}
+
+\end{document}
