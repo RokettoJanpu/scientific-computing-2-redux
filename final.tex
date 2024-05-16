@@ -57,6 +57,7 @@
 \newcommand{\G}{\Gamma}
 \newcommand{\g}{\gamma}
 \newcommand{\p}{\rho}
+\newcommand{\n}{\eta}
 
 % title
 \title{Scientific Computing Final Exam}
@@ -129,37 +130,38 @@
 	
 	\item As a preliminary, recall a "generalized" divergence theorem: for all scalars $\vp\in C^1(\O,\bR)$ and vectors $F\in C^1(\O,\bR^2)$,
 	\[\int_\O\grad\vp\cdot Fdx = -\int_O\div Fdx + \int_{\d\O}\vp F\cdot nds\]
-	Let $P(x,y):=e^{-\beta V(x,y)}M(x,y)$. Pick $u_D\in C^2(\bR^2)$ such that $u_D=0$ on $\d A$, $u_D=1$ on $\d B$, and $u_D=0$ outside some neighborhood of $\d B$ disjoint from $\G_N$ (an explicit formula for $u_D$ is given later). We obtain a BVP for $v:=u-u_D$,
+	Let $P(x,y):=e^{-\beta V(x,y)}M(x,y)$. Pick $u_D\in C^2(\bR^2)$ such that $u_D=0$ on $\d A$, $u_D=1$ on $\d B$, and $u_D=0$ outside some neighborhood of $\d B$ disjoint from $\G_N$. We obtain a BVP for $v:=u-u_D$,
 	\[\div(P\grad v) = -\div(P\grad u_D),
 	\quad v=0 \text{ on } \G_D:=\d A\cup\d B,
 	\quad \pdv{v}{n}=0 \text{ on } \G_N\]
 	Now fix $w\in C^1(\O)$ such that $w=0$ on $\G_D$, multiply the PDE for $v$ and integrate over $\O$.
 	\[\int_O w\div(P\grad v)dx = -\int_O w\div(P\grad u_D)dx\]
 	This equation, along with the generalized divergence theorem for $\vp:=w$ and $F:=P\grad v$, gives
-	\[\int_\O P\grad w\cdot\grad vdx = \int_\O w\div(P\grad u_D)dx + \int_{\G_D} wP\pdv{v}{n}ds + \int_{\G_N} wP\pdv{v}{n}ds\]
+	\[\int_\O (P\grad w)\cdot\grad vdx = \int_\O w\div(P\grad u_D)dx + \int_{\G_D} w(P\grad v)\cdot nds + \int_{\G_N} w(P\grad v)\cdot nds\]
 	On the RHS, the second term vanishes since $w=0$ on $\G_D$, and the third term vanishes since $\pdv{v}{n}=0$ on $\G_N$. The generalized divergence theorem for $\vp:=w$ and $F:=P\grad u_D$ gives
-	\[\int_\O P\grad w\cdot\grad u_Ddx = -\int_\O w\div(P\grad u_D)dx + \int_{\G_D} wP\pdv{u_D}{n}ds + \int_{\G_N} wP\pdv{u_D}{n}ds\]
-	On the RHS, the second term vanishes since $w=0$ on $\G_D$, and the third term vanishes since $u_D=0$ on $\G_N$. Combining the last two equations gives
-	\[\int_\O P\grad w\cdot\grad vdx = -\int_\O P\grad w\cdot\grad u_Ddx\]
-	This is the integral equation formulation for all solutions to the BVP for $v$ and for all $w\in C^1(\O)$.
-	
-	The standard mollifier on $\bR^2$ is
-	\[\eta(x) :=
-	\begin{cases}
-		C\exp(\frac{1}{\norm{x}^2-1}), & \norm{x} < 1 \\
-		0, & \norm{x} \ge 1
-	\end{cases}\]
-	with $C$ such that $\int_{\bR^2}\eta dx=1$. The family of mollifiers for $\e>0$ is
-	\[\eta_\e(x) := \frac{1}{\e^2}\eta\br{\frac x\e}\]
-	Note that the support of $\eta_\e$ is the open ball with center $(0,0)$ and radius $\e$. Pick $u_D$ to be a mollifier which equals 1 on $\d B$ and vanishes at points more than 0.1 away from $\d B$.
-	\[u_D(x) := \frac{1}{\eta_{0.3}(0.2,0)}\eta_{0.3}(x-(0.5,0.1))\]
+	\[\int_\O \grad w\cdot(P\grad u_D)dx = -\int_\O w\div(P\grad u_D)dx + \int_{\G_D} w(P\grad u_D)\cdot nds + \int_{\G_N} w(P\grad u_D)\cdot nds\]
+	On the RHS, the second term vanishes since $w=0$ on $\G_D$, and the third term vanishes since $u_D=0$ on $\G_N$. Combining the last two equations gives the integral equation formulation.
+	\[\int_\O \grad w\cdot(P\grad v)dx = -\int_\O \grad w\cdot(P\grad u_D)dx,
+	\quad P(x,y) = e^{-\beta V(x,y)}M(x,y)\]
 	
 	
 	\item Triangulation of $\O$:
 	\begin{center}
 		\includegraphics[scale=.5]{final 2 mesh}
 	\end{center}
-	
+
+
+	\item Assuming the notation of FEM, let $\brc{\tau_k}_{k=1}^{N_\text{tri}}$ be the above triangulation of $\O$, let $w=\eta_i$ for $i\in I_{\text{free}}$, and write $v=\sum_{j\in I_\text{free}}v_j\eta_j$. The LHS of the integral formulation becomes
+	\[\sum_{j\in I_\text{free}}\sbr{\sum_{k=1}^{N_\text{tri}}\underbrace{\int_{\tau_k} \grad\n_i\cdot(P\grad\n_j)dx}_{A_{ij}}}v_j\]
+	The stiffness matrix entries $A_{ij}$ can be found by modifying the stima3 function in FEM\_TPT.py,
+	\[0.5DGP(v_\text{mid})G^T\]
+	where $P(v_\text{mid})$ is the function $P$ evaluated at the midpoint of the triangle $\tau_k$, and
+	\[D = \m[v]{1 & 1 & 1 \\ x_i & x_{i+1} & x_{i+2} \\ y_i & y_{i+1} & y_{i+2}},
+	\quad G = \m{(\grad\n_i)^T \\ (\grad\n_{i+1})^T \\ (\grad\n_{i+2})^T}\]
+	Below is the FEM solution.
+	\begin{center}
+		\includegraphics[scale=.5]{final 2 sol}
+	\end{center}
 	
 \end{enumerate}
 
