@@ -75,25 +75,25 @@
 	
 	
 	
-\item 
+\item Code: \url{https://github.com/RokettoJanpu/scientific-computing-2-redux/blob/main/final%201.ipynb}
 
 \begin{enumerate}
 	
 	
-	\item Solution for $\mu=100$ on the left and $\mu=1000$ on the right.
+	\item The solution for $\mu=10^2$ is on the left and the one for $\mu=10^3$ on the right.
 	\begin{center}
-		\includegraphics[scale=.2]{final 1 mu = 100}
-		\includegraphics[scale=.2]{final 1 mu = 1000}
+		\includegraphics[scale=.25]{final 1 mu = 100}
+		\includegraphics[scale=.25]{final 1 mu = 1000}
 	\end{center}
 
 	
-	\item From the Butcher array, $\hat b=\m{1-\g\\\g}$ and $c=\m{\g\\1}$. Pick $b:=\m{1\\0}$. Then the method using $b$ is order 1 since $b_1+b_2=1$ but not order 2 since $b\cdot c=\g\ne\frac12$. The error estimate is
+	\item From the Butcher array, $\hat b=\m{1-\g\\\g}$ and $c=\m{\g\\1}$. Pick $b:=\m{1\\0}$. Then the method using $b$ instead of $\hat b$ is order 1 since $b_1+b_2=1$ but not order 2 since $b\cdot c=\g\ne\frac12$. The error estimate is
 	\[e := h\sum_{q=1}^2(b-\hat b)_qk_q
 	= h(\g k_1-\g k_2)
 	= h\g(k_1-k_2)
 	\imp \norm{e} = h\g\norm{k_1-k_2}\]
 	
-	The following adaptive time step algorithm multiplies or divides the time step by 2 to get close to the largest time step satisfying the step acceptance criterion.
+	The following adaptive time step algorithm repeatedly multiplies or divides the time step by 2 to get as close as possible to satisfying the step acceptance criterion.
 	\begin{algorithmic}
 			\State err $\gets$ h*gamma*norm(k1-k2)
 			\State tol $\gets$ atol + rtol*norm([x,y])
@@ -113,7 +113,7 @@
 			\EndIf
 	\end{algorithmic}
 	
-	CPU time of 409s.
+	Using the adaptive time step algorithm for $\mu=10^6$ and $T_\text{max}=2\cdot10^6$, the CPU time is 409s.
 	\begin{center}
 		\includegraphics[scale=.6]{final 1 mu = 1000000}
 	\end{center}
@@ -129,18 +129,18 @@
 	
 	\item As a preliminary, recall a "generalized" divergence theorem: for all scalars $\vp\in C^1(\O,\bR)$ and vectors $F\in C^1(\O,\bR^2)$,
 	\[\int_\O\grad\vp\cdot Fdx = -\int_O\div Fdx + \int_{\d\O}\vp F\cdot nds\]
-	Let $A(x,y):=e^{-\beta V(x,y)}M(x,y)$. Pick $u_D\in C^2(\bR^2)$ such that $u_D=0$ on $\d A$, $u_D=1$ on $\d B$, and $u_D=0$ outside some neighborhood of $\d B$ disjoint from $\G_N$ (an explicit formula for $u_D$ is given later). We obtain a BVP for $v:=u-u_D$,
-	\[\div(A\grad v) = -\div(A\grad u_D),
+	Let $P(x,y):=e^{-\beta V(x,y)}M(x,y)$. Pick $u_D\in C^2(\bR^2)$ such that $u_D=0$ on $\d A$, $u_D=1$ on $\d B$, and $u_D=0$ outside some neighborhood of $\d B$ disjoint from $\G_N$ (an explicit formula for $u_D$ is given later). We obtain a BVP for $v:=u-u_D$,
+	\[\div(P\grad v) = -\div(P\grad u_D),
 	\quad v=0 \text{ on } \G_D:=\d A\cup\d B,
 	\quad \pdv{v}{n}=0 \text{ on } \G_N\]
 	Now fix $w\in C^1(\O)$ such that $w=0$ on $\G_D$, multiply the PDE for $v$ and integrate over $\O$.
-	\[\int_O w\div(A\grad v)dx = -\int_O w\div(A\grad u_D)dx\]
-	This equation, along with the generalized divergence theorem for $\vp:=w$ and $F:=A\grad v$, gives
-	\[\int_\O A\grad w\cdot\grad vdx = \int_\O w\div(A\grad u_D)dx + \int_{\G_D} wA\pdv{v}{n}ds + \int_{\G_N} wA\pdv{v}{n}ds\]
-	On the RHS, the second term vanishes since $w=0$ on $\G_D$, and the third term vanishes since $\pdv{v}{n}=0$ on $\G_N$. The generalized divergence theorem for $\vp:=w$ and $F:=A\grad u_D$ gives
-	\[\int_\O A\grad w\cdot\grad u_Ddx = -\int_\O w\div(A\grad u_D)dx + \int_{\G_D} wA\pdv{u_D}{n}ds + \int_{\G_N} wA\pdv{u_D}{n}ds\]
+	\[\int_O w\div(P\grad v)dx = -\int_O w\div(P\grad u_D)dx\]
+	This equation, along with the generalized divergence theorem for $\vp:=w$ and $F:=P\grad v$, gives
+	\[\int_\O P\grad w\cdot\grad vdx = \int_\O w\div(P\grad u_D)dx + \int_{\G_D} wP\pdv{v}{n}ds + \int_{\G_N} wP\pdv{v}{n}ds\]
+	On the RHS, the second term vanishes since $w=0$ on $\G_D$, and the third term vanishes since $\pdv{v}{n}=0$ on $\G_N$. The generalized divergence theorem for $\vp:=w$ and $F:=P\grad u_D$ gives
+	\[\int_\O P\grad w\cdot\grad u_Ddx = -\int_\O w\div(P\grad u_D)dx + \int_{\G_D} wP\pdv{u_D}{n}ds + \int_{\G_N} wP\pdv{u_D}{n}ds\]
 	On the RHS, the second term vanishes since $w=0$ on $\G_D$, and the third term vanishes since $u_D=0$ on $\G_N$. Combining the last two equations gives
-	\[\int_\O A\grad w\cdot\grad vdx = -\int_\O A\grad w\cdot\grad u_Ddx\]
+	\[\int_\O P\grad w\cdot\grad vdx = -\int_\O P\grad w\cdot\grad u_Ddx\]
 	This is the integral equation formulation for all solutions to the BVP for $v$ and for all $w\in C^1(\O)$.
 	
 	The standard mollifier on $\bR^2$ is
@@ -153,6 +153,12 @@
 	\[\eta_\e(x) := \frac{1}{\e^2}\eta\br{\frac x\e}\]
 	Note that the support of $\eta_\e$ is the open ball with center $(0,0)$ and radius $\e$. Pick $u_D$ to be a mollifier which equals 1 on $\d B$ and vanishes at points more than 0.1 away from $\d B$.
 	\[u_D(x) := \frac{1}{\eta_{0.3}(0.2,0)}\eta_{0.3}(x-(0.5,0.1))\]
+	
+	
+	\item Triangulation of $\O$:
+	\begin{center}
+		\includegraphics[scale=.5]{final 2 mesh}
+	\end{center}
 	
 	
 \end{enumerate}
