@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.22)  16 MAY 2024 21:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.22)  16 MAY 2024 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1144,12 +1144,7 @@ Package pdftex.def Info: final 1 mu = 1000.png  used on input line 87.
 File: final 1 mu = 1000000.png Graphic file (type png)
 <use final 1 mu = 1000000.png>
 Package pdftex.def Info: final 1 mu = 1000000.png  used on input line 119.
-(pdftex.def)             Requested size: 433.62334pt x 216.81168pt.
-
-Overfull \hbox (10.86835pt too wide) in paragraph at lines 119--120
- [] 
- []
-
+(pdftex.def)             Requested size: 216.81166pt x 108.40584pt.
 [1
 
 {C:/Users/RyanPC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./final 1 m
@@ -1158,30 +1153,35 @@ u = 100.png> <./final 1 mu = 1000.png>]
 File: final 2 mesh.png Graphic file (type png)
 <use final 2 mesh.png>
 Package pdftex.def Info: final 2 mesh.png  used on input line 150.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
- [2 <./final 1 mu = 1000000.png>]
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+ [2 <./final 1 mu = 1000000.png> <./final 2 mesh.png>]
 Overfull \hbox (11.3957pt too wide) in paragraph at lines 162--163
 []\OT1/cmr/m/n/10 (-20) Code: []$\OT1/cmtt/m/n/10 https : / / github . com / Ro
 kettoJanpu / scientific-[]computing-[]2-[]redux / blob / main / final %
  []
 
-<final 2 sol.png, id=47, 462.528pt x 346.896pt>
+<final 2 sol.png, id=48, 462.528pt x 346.896pt>
 File: final 2 sol.png Graphic file (type png)
 <use final 2 sol.png>
 Package pdftex.def Info: final 2 sol.png  used on input line 164.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-[3 <./final 2 mesh.png> <./final 2 sol.png>]
-<final 3a.png, id=57, 1445.4pt x 706.13812pt>
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+<final 3a.png, id=49, 1445.4pt x 706.13812pt>
 File: final 3a.png Graphic file (type png)
 <use final 3a.png>
 Package pdftex.def Info: final 3a.png  used on input line 184.
 (pdftex.def)             Requested size: 289.07487pt x 141.22511pt.
-<final 3 sol.png, id=58, 722.7pt x 722.7pt>
+[3 <./final 2 sol.png> <./final 3a.png>]
+Overfull \hbox (11.3957pt too wide) in paragraph at lines 201--202
+[]\OT1/cmr/m/n/10 (-20) Code: []$\OT1/cmtt/m/n/10 https : / / github . com / Ro
+kettoJanpu / scientific-[]computing-[]2-[]redux / blob / main / final %
+ []
+
+<final 3 sol.png, id=62, 722.7pt x 722.7pt>
 File: final 3 sol.png Graphic file (type png)
 <use final 3 sol.png>
-Package pdftex.def Info: final 3 sol.png  used on input line 202.
-(pdftex.def)             Requested size: 289.07487pt x 289.07487pt.
- [4 <./final 3a.png>] [5 <./final 3 sol.png>] (final.aux)
+Package pdftex.def Info: final 3 sol.png  used on input line 203.
+(pdftex.def)             Requested size: 361.3491pt x 361.3491pt.
+[4 <./final 3 sol.png>] (final.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
@@ -1191,12 +1191,12 @@ Package rerunfilecheck Info: File `final.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  34072 strings out of 474525
- 715280 string characters out of 5744516
+ 715281 string characters out of 5744516
  1944496 words of memory out of 5000000
  55713 multiletter control sequences out of 15000+600000
  570312 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,13n,121p,1004b,1350s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,13n,121p,1004b,1337s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\RyanPC\AppData\Local\MiKTeX\fonts/pk/ljfour/public/esint/dpi600\es
 int10.pk><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmbsy10.pfb><C:/Users/RyanPC/AppData/Local/Programs/MiKTeX/fonts/type1/
@@ -1215,9 +1215,9 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/RyanPC/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/RyanPC/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/RyanPC/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on final.pdf (5 pages, 1048354 bytes).
+Output written on final.pdf (4 pages, 1048849 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
+ 143 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)
  21040 words of extra memory for PDF output out of 24883 (max. 10000000)
 
